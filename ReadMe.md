@@ -7,7 +7,7 @@ Make sure the VaultExceptionParser2023.dll is deployed with your library/applica
 
 ## Use
 The Vault Exception Parser contains all static methods and properties and is initialized upon first use, therefor you do not need to instantiate any objects on your own.
-Simply call the code below from any Exception object.
+Simply call the `ParseVaultException()` extension method from any Exception object.
 
 ```C#
 try{
