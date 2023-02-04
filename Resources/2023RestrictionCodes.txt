@@ -1,0 +1,107 @@
+#################################
+### Vault 2023 Restriction Codes
+#################################
+### Code | Name | Comments 
+#################################
+1000 FileDependantParents	Operation cannot be performed because the file has dependent parents.
+1001	FileCheckedOut	Operation cannot be performed because the file is checked out.
+1002	FileOldVersion	Operation cannot be performed because the file is an old version.
+1003	FileLinkedToItem	Operation cannot be performed because the file is linked to an item.
+1004	FileAttachedToItem	Operation cannot be performed because the file is attached to an item.
+1006	FileParentSameName	Operation cannot be performed because the file has a parent with the same name.
+1007	FolderIsRoot	Operation cannot be performed because the folder is the root.
+1009	BadFolderId	Folder id is invalid.
+1010	MoveFolderExists	Folder with the same name already exists in the destination folder.
+1011	MoveFolderDescendentCheckedOut	Folder begin moved has descendant files that are checked out.
+1012	MoveFolderChildRootInvalid	Move folder rule-check failed: parent must exist, for all but root.
+1013	MoveFolderLibraryRelationshipInvalid	Move folder rule-check failed: libs can only have non lib parent if that parent is root. libs cannot have non lib children.
+1014	MoveFolderConcurrent	Cannot finish move to destination folder because the destination folder was already created due to a concurrent operation (add,move, or rename).
+1016	FileStatusTrackingDisabled	Option is not set for tracking file status.
+1017	FileStatusChildNotUpToDate	Child must be set to up to date in order for parent to be set to up to date.
+1018	MoveFolderDestinationIsDescendant	Cannot move a folder because we are trying to move it to a child folder.
+1019	MoveFolderDestinationIsSelf	Cannot move a folder to itself.
+1020	FileNotCheckedOut	The file has not been checked out.
+1100	UnitOfMeasureSystemCannotBeChanged	Operation cannot be performed because System Unit of Measure cannot be changed.
+1101	UnitOfMeasureInUse	Operation cannot be performed because Unit of Measure is already being used.
+1102	UnitOfMeasureBaseUnitConversionFactorMustBe1	Operation cannot be performed because the base unit of conversion factor is not 1.
+1103	UnitOfMeasureNameConflictInFamily	Operation cannot be performed because the Unit of Measure name conflicts with another in the same family of units.
+1104	UnitOfMeasureAbbreviationConflictInFamily	Operation cannot be performed because the Unit of Measure abbreviation conflicts with another in the same family of units.
+1105	UnitOfMeasureInvalidBase	Operation cannot be performed because the file is checked out.
+1425	BadFileIterationID	Operation cannot be performed because IterationID is invalid.
+2000	ItemLocked	Operation cannot be performed because item is locked by another user.
+2009	ItemInvalidUnitOfMeasure	Operation cannot be performed because an invalid unit of measure was specified.
+2010	ItemPartOfOngoingPromoteOrUpdate	Operation cannot be performed because the item is part of an on-going promote or update.
+2011	ItemLinkPreventsDeletion	Operation cannot be performed because an item link prevents the deletion.
+2012	ItemRevisionFormatAlreadyInUse	Operation cannot be performed because a revision format is already in use.
+2013	ItemRevisionFormatCurrentAndNewTheSame	Operation cannot be performed because the current revision formant and the new revision format are the same.
+2014	ItemRevisionFormatDoesNotExist	Operation cannot be performed because a revision format does not exist.
+2015	ItemPreviouslyReleased	Operation cannot be performed because there is a previously released revision.
+2016	ItemControlledByChangeOrder	Operation cannot be performed because the item is being controlled by a change order.
+2017	ItemNoItemToReplaceAfterExpiration	Operation cannot be performed because the item is set to expire but there is no item to replace it once it does expire.
+2018	ItemBOMLinkCircularReference	Operation cannot be performed because the item that is being added has a parent item that is the same causing a circular reference.
+2019	ItemNotRestorable	Operation cannot be performed because the item not restorable.
+2020	ItemEquivalencyConflict	Operation cannot be performed because it would result in an equivalency conflict.
+2021	ItemChangeOrderLinkPreventsDeletion	Operation cannot be performed because the item belongs to a change order.
+2022	ItemPromoteOfPhantomOrReference	Can not promote phantom or reference files
+2024	ItemHasNoStateToRollbackTo	Operation cannot be performed because item has no state to rollback to.
+2025	ItemCantRollbackItemHistoryOnAClosedChangeOrder	Operation cannot be performed because you can not rollback a lifecycle change for a version that is associated with a closed or canceled change order.
+2026	ItemMustBeOnAnActiveChangeOrder	Operation cannot be performed because the item must be associated with an active change order.
+2027	ItemEffectivityStartOfChildGreaterThanParent	Operation cannot be performed because the child item has a later effective start date/time than one of it's parents and there is no prior effective revision for the child that can be used.
+2028	ItemCantRollbackItemBeforeCreationOfChangeOrder	Operation cannot be performed because you can not rollback a lifecycle change for a version that was created before the creation of the change order.
+2029	ItemIsObsolete	Operation cannot be performed when the destination object is obsolete.
+2030	ItemWasDeleted	Operation cannot be performed because the destination item has been deleted.
+2031	ItemDestinationWasSource	Operation cannot be performed because destination items cannot also be source items.
+2032	ItemSourceNotNew	Operation cannot be performed on source items unless they created by the current promote or update operation.
+2033	ItemCantPromoteConfigurationFactory	Operation cannot be performed configuration factories cannot be assigned to an item.
+2034	BOMCompareCircularDependency	Operation cannot be performed because it would create a circular reference.
+2035	ItemStandardComponentsMustHaveEquivalenceValue	Operation cannot be performed because standard components must have an equivalence value.
+2036	ItemCantPromoteDesignDocument	Inventor drawing files cannot be assigned to items. Associate the drawing to the part or assembly file and assign the item to these files.
+2037	ItemNotEditable	Operation cannot be performed because the item is not in an editable state.
+2040	ProjectLinkInFolderPreventsDeletion	Operation cannot be performed because there are links to the Item in a Folder
+2041	ProjectLinkInCustEntPreventsDeletion	Operation cannot be performed because there are links to the Item in a Custom Entity.
+2042	ItemNotControlledByThisChangeOrder	Operation cannot be performed because the item is not controlled by the change order.
+2044	ItemRollbackCurrentStateIsNull	Operation cannot be performed because the item does not have a Lifecycle State assigned.
+2045	ItemRollbackTargetStateIsNull	Operation cannot be performed because the target item does not have a Lifecycle State assigned.
+2046	ItemRollbackTargetNotControlled	Operation cannot be performed because the target item is not Controlled (i.e. it can be purged).
+2047	RollbackItemLifeCycleStatesFailedWrongTarget	Operation cannot be performed because the target item is invalid.
+2048	FileMissingBOM	File should have BOM information but does not.
+#3000	DuplicateItemNumber	Operation cannot be performed because the entered item number already exists.
+3001	AutoFieldNumberUsedUp	Operation cannot be performed because the numbers in the auto-generated field are used up.
+3002	BadNumberingSchemeId	Operation cannot be performed because no numbering scheme has the requested id.
+#3003	NumberingSchemeNotActive	Operation cannot be performed because the requested numbering scheme is not active.
+#3004	ItemManualLifeCycleStateChangeNotAllowed	Operation cannot be performed because manual life cycle state changes are not allowed.
+3005	ItemNumberNoMappedValue	Operation cannot be performed because no mapped item number exists for this item.
+3006	GenerateNumberFailed	Generate next number scheme value failed.
+3100	PropertyConstraintFailure	Transition out of WIP cannot be performed because of one or more property constraint violations.
+3000	ChangeOrderLocked	Operation cannot be performed because item is locked by another user.
+3003	ChangeOrderActivityRequiresItemToBeInReview	Operation cannot be performed because the item is not in the 'In Review' life cycle state.
+3004	ChangeOrderNoUserPrivDeleteNotAllowed	 Operation cannot be performed because user does not have the required Delete Role for this Change Order. Note: this restriction will only be thrown by the server if the user has Unconditional Delete permission otherwise a 303 exception will be thrown
+3007	ChangeOrderNumberAlreadyInUse	Operation cannot be performed because there already exists a Change Order with the specified Change Order Number.
+4001	BadEntityId	Entity does not exist.
+4002	UnsupportedEntityClass	Operation not supported for that type of entity.
+5001	StateTransitionDenied	User does not have the permission to perform that state transition.
+5002	ChildFileNotReleased	Operation cannot be performed because a child file is not in the Released state.
+5003	CannotPassCriteria	Entity's particular property not match the criteria defined with that transition.
+5004	StateIsTipRevision	Operation cannot be performed because the state is used by a tip revision.
+5005	ChildFolderNotReleased	Operation cannot be performed because a child folder is not in the Released state.
+5006	ContainedFileNotReleased	Operation cannot be performed because the container has a file that is not in the Released state.
+5007	ContainedLinkToFileNotReleased	Operation cannot be performed because the container has a linked file that is not in the Released state.
+5008	ContainedLinkToFolderNotReleased	Operation cannot be performed because the container has a linked folder that is not in the Released state.
+5009	ContainedLinkToCustEntNotReleased	Operation cannot be performed because the container has a linked custom entity that is not in the Released state.
+5010	ChildItemNotReleased	Operation cannot be performed because a child item is not in the Released state.
+5011	ContainedLinkToItemNotReleased	Operation cannot be performed because the Container has a linked item that is not in the Released state.
+5012	ItemFileLinkNotUpToDate	Operation cannot be performed because the file links of an item are not up to date.
+5013	ChildFileIsObsolete	Operation cannot be performed because the child file is in the Obsolete state.
+5014	ChildFolderIsObsolete	Operation cannot be performed because the child folder is in the Obsolete state.
+5015	ChildItemIsObsolete	Operation cannot be performed because the child item is in the Obsolete state
+5016	ItemFileLinkNotReleased	Operation cannot be performed because the file links of an item are not in the Released state.
+5017	ChildItemHasNotBeenReleased	Operation cannot be performed because the child item has never been in the Released state.
+5030	FileManualLifeCycleStateChangeNotAllowed	Operation cannot be performed because manual life cycle state changes are not allowed.
+5031	FileControlledByChangeOrder	Operation cannot be performed because the file is being controlled by a change order.
+5032	FileNotControlledByThisChangeOrder	Operation cannot be performed because the file is not controlled by the Change Order.
+6000	InvalidPropertyDefId	PropertyDefId is invalid.
+6001	IsSystemPropertyDef	PropertyDef is a System Property Definition.
+6002	ReferencedByEntity	PropertyDef is in use for at least one Entity.
+6003	AssociatedToEntityClass	PropertyDef is associated to an EntityClass.
+6004	AssociatedToCategory	PropertyDef is associated to a Category.
+6005	IsUDPForSystemUse 	PropertyDef is a UDP for system use.

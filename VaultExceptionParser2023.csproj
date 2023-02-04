@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Addam Boord</Authors>
+    <Company>Fütemire</Company>
+    <Title>Autodesk Vault 2023 Error Parser</Title>
+    <Version>28.0.0.0</Version>
+    <Copyright>2023</Copyright>
+    <PackageTags>Autodesk;Vault;2023</PackageTags>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Ketiv.VEP.pfx</AssemblyOriginatorKeyFile>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Autodesk.Connectivity.WebServices">
+      <HintPath>..\..\..\..\..\Program Files\Autodesk\Vault Client 2023\Explorer\Autodesk.Connectivity.WebServices.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\VaultSDKContents.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set DeployPath=&quot;C:\Users\ketiv_dmgab\source\repos\vJobs\vJobs.Extensibility\libs\&quot;&#xD;&#xA;echo F | XCOPY &quot;$(TargetPath)&quot; &quot;%25DeployPath%25&quot; /y" />
+  </Target>
+
+</Project>

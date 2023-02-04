@@ -1,0 +1,901 @@
+############################
+### Vault 2023 Error Codes
+############################
+### Code | Name | Comments 
+############################
+0 UnspecifiedSystemException Used when the error code is invalid. 
+100 CreateKnowledgeVaultDatabase Error creating the knowledge vault. 
+102 DatabaseExists Database already exists. 
+103 DatabaseFull Database is full. 
+106 TransactionInvalidPrincipal The principal does not meet requirements to call this service.
+An example would be making a call without being logged into a vault for methods that require a vault 
+108 TransactionManagementError Cannot create database connection and/or transaction 
+109 DatabaseError Generic error for unexpected database issues. 
+111 BadResourceRelativePath General error for failures to store or access a resource in the file store 
+114 CreateSystemMasterDatabase could not create KnowledgeVaultMaster Database 
+130 UnknownVersion Unable to determine the version of a KnowledgeVault or Master 
+131 InvalidAdminDbLogin The database admin login is invalid 
+132 DirectoryNotEmpty The directory is not empty 
+133 KnowledgeVaultDoesNotExist The Knowledge Vault referenced doesn't exist. 
+134 KnowledgeVaultsAttached There are Knowledge Vaults still attached. 
+137 IllegalInputParam One of the inputs to the service call is incorrect. 
+138 IllegalDatabaseName Database name is not allowed. Most likely due to illegal characters. 
+139 IllegalPath Specified folder is illegal. 
+140 DuplicatePath Specified folder is already in use. 
+143 UserAlreadyExists Duplicate User Name 
+144 DbFileAlreadyExists Database error because an MDF or LDF file with that name already exists. 
+146 MigrationPathNotFound Cannot determine the migration steps. 
+147 PathTooLong The specified path is too long. 
+148 UnsupportedProduct The vault has a product installed that is not installed on the server 
+150 KnowledgeVaultMasterDoesNotExist The KnowledgeVaultMaster referenced doesn't exist 
+152 IllegalRestoreDBLocation Cannot restore db files to a remote location 
+153 InvalidBackupDirectory Selected directory does not contain a valid backup structure. 
+154 InvalidUserId The user ID is not valid 
+155 IllegalNullParam A null value was passed in where a null value is not allowed. 
+157 AdministratorCannotBeRemoved Unable to remove administrator privileges from "last" administrator user. 
+158 CircularReference An error occurred because a circular reference is detected. 
+160 BadId Bad Id. 
+164 MigrationXmlError migrations.xml identifies the .sql scripts and C# code that need to be executed for the different migration paths (e.g., R2 to R3, etc.) 
+165 KnowledgeLibraryDoesNotExist Occurs during restore - also see KnowledgeVaultDoesNotExist:133 
+167 AttachWrongDatabaseType The database cannot be attached because it is of the wrong database type. 
+171 DuplicateLibraryGuid There is already a KnowledgeLibrary with the same GUID 
+173 ReadOnlyFile Trying to perform a write operation on a read-only file 
+174 InvalidDatabaseCollation Trying to create a KVM with an invalid database collation (Ex. case sensitive) 
+175 InsufficientFilePermissions The user does not have permission to the path. 
+176 GroupDoesNotExist The users group does not exist. 
+179 IOError IOException has been thrown. IOException.Message={0} 
+180 FileDoesNotExist An expected file does not exist. 
+185 IncrementTurnedOff Incremental backup and restore is not turned on. 
+186 IncRestoreInEligibleForAdminDataDirty Incremental restore is not possible because the server has been modified. 
+187 IncRestoreInEligibleForUserDataDirty Incremental restore is not possible because the vault/library has been modified. 
+188 IncRestoreInEligibleForBadStateId This increment cannot be restored to current state 
+189 IncBackupInEligibleForAdminDataDirty A Vault or Library has been added or removed. This change is not supported by an Incremental Backup. 
+190 IncBackupInEligibleForUserDataNotdirty No changes have occurred since the last Full or Incremental Backup. 
+191 IncBackupInEligibleForFullBackupUndone A Full Backup must occur before Incremental Backup. 
+192 MissingBackupPackages Missing backup packages. 
+193 ContentfileWrongFormatted Content file is not formatted properly. 
+194 IncRestoreInEligibleForWrongIncrement The backup is ineligible for incremental restore. 
+196 LibraryPartitionDoesNotExist The Library partition does not exist. 
+197 LibraryPartitionUpdateDoesNotExist Cannot update from the current partition to the one specified. 
+198 DatabaseServerNotCompatible The database or backup is not compatible with the database server. 
+199 SystemTypeNotEditable System entity types cannot be edited. 
+200 NonmemberSite Server is not a member site in this environment. 
+201 DatabaseLocked Database is locked as the Autodesk Data Management server is presently performing some locking operation. 
+202 MultisiteNotEnabled Additional sites cannot be enabled in this product edition. If this computer has been recently renamed, please update the site via the server console command line options. 
+204 InvalidSiteName The site does not exist. 
+205 CouldNotReplicate Unable to replicate file. 
+207 NoFilestore No file store has been specified for the vault on this site. 
+208 InvalidVaultSite The vault has not been mapped. 
+211 VaultDisabled
+ The vault is disabled on this site. 
+212 FileStoreMismatch There is a sentinel file with a vault GUID in the root of the filestore. This value needs to match the GUID identity of the vault 
+213 OrphanedMetaData This file is either missing from the file store or failing validation. 
+214 RoleDoesNotExist The role does not exist. 
+215 InvalidSystemDbLogin The system user [vaultsys] either doesn't exist or doesn't match the web.config password 
+216 GroupAlreadyExists Duplicate Group Name 
+217 DuplicateVaultGuid There is already a vault with the same GUID. 
+220 AddEntityClassFailure Failed to add Entity class. 
+221 AddRelationshipClassFailure Failed to add Relationship class. 
+222 ChecksumValidationFailure Checksum validation failed. 
+223 RestoringUnsupportedProducts Restore failed due to product difference between the server and the backup. 
+224 InvalidServiceExtensionConfig At least one type or method referenced in the ServiceExtenstions.xml file could not be resolved. 
+226 LuceneSearchError Wrap any errors thrown by Lucene when searching. 
+227 LuceneIndexingError Wrap any errors thrown by Lucene when indexing. 
+228 InvalidServiceExtensionMethod Wrap any errors thrown when invoking a service extension method. 
+230 PropertyParsingFailed Search failed to parse a property value. 
+231 DatabaseDeadlock Generic error for unexpected database issues. 
+232 ConfigurationError Error occurred calling a config section handler 
+233 DatabaseLogFull The database transaction log is full and cannot be grown. 
+234 ArraysOfDifferentSizes Input arrays were of different lengths. 
+236 UnsupportedParameterType An error occurred when reading value of non-existing type. 
+237 DuplicateQueuedEvent Unable to submit job(s) to the Job Server. A duplicate job is already in the queue. 
+238 InvalidEventClass Invalid job type. Unable to submit job(s) to the Job Server. 
+239 UnreserveEventFailed Unable to perform this action. The selected job has already completed. 
+240 JobQueueDisabled Unable to submit job(s) to the Job Server. The Job Server is disabled. 
+241 UnsupportedOperation This method is not supported by the current server configuration. 
+242 DuplicatePropertiesCannotBeToSamePropertyDef Duplicate properties cannot be mapped to same Property Definition. 
+243 PropertiesCannotHaveTheSamePriority Properties cannot have the same priority. 
+244 FailedToLoadPropertyProviderForProp Failure to load Property Provider for Property. 
+245 InvalidPropertyForPropertyProvider Invalid Property for Property Provider. 
+246 IncompatiblePropertyDataTypes Incompatible property data types for mapping. 
+247 CannotCreateNewForProperty Property does not support the Create New option. 
+248 PropertyDoesNotSupportMappingDir Property does not support direction. 
+249 InvalidEntityClassId Invalid Entity Class. 
+250 CannotFindPropertyDefBySystemName Cannot find property definition. 
+251 CannotCreatePropertyDef Cannot create property definition. 
+252 CannotCreatePropertyDef_DisplayNameExists Cannot create property definition. The Display Name already exists for another property definition. 
+253 PropertyDefIdDoesNotExist Property definition does not exist. 
+255 PropertyDefIsNotMappedToEntityClass Property definition is not mapped to specified entity class with required mapping direction support. 
+256 SystemPropertyDefsCannotChangeThierEnitityClassMappings System property definitions cannot have their entity class mappings changed. 
+257 CannotDeleteMappingsWhichAreInUseByEnts Cannot delete property definition associations to entity classes if entities exist. 
+258 PropertyDefDisplayNameExist The Display Name already exists for another property definition. 
+259 ContentSourcePropertyDefIdDoesNotExist The content source property definition does not exist. 
+260 SystemPropertyDefsCannotBeDeleted System property definitions cannot be deleted. 
+261 PropertyDefsCannotBeDeletedWithEntityRefs Property definitions cannot be deleted while they are in use. 
+262 CtntSrcPropProviderNotFound Property provider not found. 
+263 BadNumberingSchemeId Selected numbering scheme does not exist. 
+264 NumberingSchemeIsDefault You cannot edit, delete, or disable the default numbering scheme. 
+265 DuplicateNumberSchemeName A numbering scheme with the same name already exists. 
+266 NumberingSchemeInUse The numbering scheme cannot be modified or deleted because it is in use. 
+276 MethodNotSupportedWithBaseVaultServer Method not supported with vault server. 
+277 PropertyDefRequiresEntityClassMapping Property Definition requires at least one Entity Class mapping. 
+278 PropertyDefDefaultValuesNotSupported Property Definition default values are not supported. 
+279 InvalidEntityClassName Invalid Entity Class name. 
+280 OnlyReadMappingsSupported Only Read mappings to Property Definitions are supported. 
+281 CreateNewPropertyMappingsNotSupported Creation of new properties is not supported. 
+282 RestrictionsOccurred Restrictions occurred 
+283 BadEntityId The specified entity does not exist. 
+284 EntityClassDoesNotSupportMapping Entity Class does not support content source mapping. 
+285 EntityClassDoesNotSupportMappingToCSType Entity Class does not support mapping to content source definition types. 
+286 MigrationInProgress Migration cannot be performed at this time.The database is already being migrated. 
+287 EntityClassDoesNotSupportLinks Entity Class does not support links. 
+288 AddLinkFailed An error occurred while trying to create the link. 
+289 CreateNewAndDefaultMappingTypeNotSupported Default value mapping types do not support Create New. 
+290 UserDefinedPropertyListValuesNotSupported Server does not support user defined property List values. 
+291 UserDefinedPropertyConstraintsNotSupported Server does not support user defined property constraints. 
+292 UserDefinedPropertyWithoutCSMappingsNotSupported Server does not support user defined properties without content source mappings. 
+293 UserDefinedPropertyInitialValuesNotSupported Server does not support user defined property initial values. 
+294 LegacyOperationBlocked This error means that an older client is communicating with a new server and the newer server no longer supports the legacy operation. 
+296 DatabaseCopyFileFailed Database server could not copy file. 
+297 DatabaseOffline The database is offline. 
+299 CannotUnzip The compressed data could not be unzipped. 
+300 BadAuthenticationToken This can happen when the web services are restarted. 
+301 InvalidUserPassword Username and/or Password is invalid, so user cannot be authenticated. 
+302 UserNotVaultMember User is not a member of the vault 
+303 PermissionDenied Invalid permissions for transaction 
+304 UserIsDisabled User is disabled 
+306 IncompatibleKnowledgeVault The compatibility of the Vault doesn't match the server version 
+307 IncompatibleKnowledgeMaster The compatibility of the Knowledge Master doesn't match the server version 
+308 RestrictionsOccurred Restrictions have occurred. 
+309 FeatureNotAvailable The server is not configured to use that feature. 
+310 IncompatibleKnowledgeLibrary The version of the Knowledge Library doesn't match the server version. 
+311 InvalidAuthType Attempted to login through WinAuth login user, but user is of Auth Type Vault. 
+312 WinAuthUserNotFound could be auto create is disabled or could not find a valid AD group 
+313 WinAuthAnonymousIdentity Identity was unauthenticated or anonymous 
+318 WinAuthFailed Unknown WinAuth error occurred. 
+319 LicensingError Failed to acquire a license. 
+320 PermissionTamperingDetected Vault has detected tampering with the security subsystem. Unlicensed client access is currently prohibited. 
+323 WorkgroupIsSubscriber This operation cannot be performed on a subscribing workgroup. 
+324 LicenseMismatch The license obtained is incompatible with the server. 
+325 DuplicateRoleName Duplicate Role Name. 
+326 SystemRoleReadonly System roles cannot be modified or deleted. 
+400 DuplicateRoutingName The routing name already exists. 
+401 IncompleteRouting Must be at least one user assigned to each role. 
+402 DeactivateRoutingFailed Can't deactivate the last active routing, or the default routing. 
+403 DeleteRoutingFailed Can't delete a routing in use, the last active routing, or the default routing. 
+404 SetDefaultRoutingFailed Cannot set a deactivated routing to the default. 
+405 ActionDenied The user does not have the appropriate routing role to perform the activity. 
+406 ActionAlreadyPerformed The user has already performed the activity since the change order last entered the current state. 
+407 BadRoutingName Routing name contains illegal characters 
+408 BadRoutingNameLength Routing name length must be between 1 and 50 characters. 
+409 InvalidWorkFlow Invalid Workflow. 
+501 FailureToLoadEmailHandler A server configured email handler could not be loaded or found. 
+502 ErrorSendingEmail An email failed while attempting to be sent. 
+503 ErrorInitializeEmailhandler An email handler failed to initialize and will not be available for use. 
+504 EmailIsConfiguredAsDisabled An email was requested to be sent, but email is disabled. 
+505 InvalidAttachmentStream An e-mail attachment file stream was invalid. 
+506 InvalidAttachmentName An email failed due to the attachment filename being invalid or could not be found. 
+507 ErrorLoadingEmailTemplate Unable to load the email template. Please try again or contact your administrator for help. 
+600 JobConfigurationError There is an error in the job configuration. 
+601 FailureToLoadJobHandler There is an invalid handler in the job configuration. 
+602 DuplicateJobHandlerIdFound There are duplicate handlers in the job configuration. 
+603 JobIdNotFound The specified job id does not exist in the job configuration. 
+700 AddCustomEntityDefFailed An error occurred while trying to create a custom object definition. 
+701 AddCustomEntityFailed An error occurred while trying to create a custom object. 
+702 DeleteCustomEntityRestrictionsOccurred One or more entities cannot be deleted due to vault restrictions. 
+703 DeleteCustomEntityDefFailed The custom object definition is in use. 
+704 UpdateCustomEntityFailed An error occurred while trying to update the custom object. 
+705 UpdateCustomEntityDefFailed An error occurred while attempting to update the custom object definition. 
+706 DuplicateCustomEntityDefName The custom object name already exists. 
+707 CustomEntityDefDisplayNameExceedsMaxLength Name is longer than 256 characters. 
+708 InvalidCustomEntityDefDisplayName The name value may not be blank or contain invalid characters. 
+709 CustomEntityNameExceedsMaxLength Name is longer than 256 characters. 
+1000 BadFolderId Cannot get files by folder id
+Cannot get root folder
+Cannot get folder by path
+Cannot get folder by folder id
+Cannot get children for folder id 
+1001 GetLatestVersionFailed Cannot get latest file version based on folder id and file id.
+Cannot get latest file version based on owner id. 
+1002 GetVersionsFailed Cannot get file version based on version id.
+Cannot get file version based on file id and version number. 
+1003 BadFileId This error code should still exist, but none of these items appear to belong here: Error getting all file versions by owner id (I think this should be throw BadVersionId)
+Error downloading file version based on version id and file name (I think this should throw BadVersionId)
+Error in GetAllPropertyDefinitions  (I think this should throw BadPropertyDefinitions)
+Error in GetAllPropertyDefinitionsExtended (I think this should throw BadPropertyDefinitions) 
+1004 CheckoutFailed Checkout latest file version failed. 
+1005 CheckinFailed Error checking in file version into database. 
+1006 UndoCheckoutFailed Error undoing check out of file version. 
+1007 BadVersionId Bad version id when getting file version dependents or dependencies by version id. 
+1008 AddFileExists Cannot add file because file exists. 
+1009 AddFileFailed Cannot add file (unspecified failure) 
+1011 AddFolderExists Cannot add folder because folder exists. 
+1012 AddFailedCreateFolder Cannot add folder (unable to create/make new folder). 
+1013 GetFileFailed Cannot get file (file id is invalid). 
+1014 MakeVersionFailed Cannot create/make version in database. 
+1015 DeleteFileWithDependencies Only have file id, not name 
+1016 UndoCheckoutWrongUser Cannot undo checkout because user is not the same as user who checked out file. 
+1017 UndoCheckoutWrongFolder Cannot undo checkout because passed in folder id is not the same folder that the file was checked out from. 
+1018 CheckinNotCheckedOut Cannot check in file because the file is not currently checked out 
+1019 CheckinWrongUser Cannot check in file because the file is not currently checked out by the same user. 
+1020 CheckinWrongFolder Cannot check in file because passed in folder id is not the same folder that the file was checked out from. 
+1021 CheckoutAlreadyCheckedOut Cannot check out the file because it is already checked out. 
+1022 SelfDependency The file has circular dependencies. 
+1023 MakeFolderFailed Cannot create folder in database. 
+1024 GetFolderFailed Occurs in these cases:
+Cannot get folder based on path.
+Cannot get folder based on folder id. 
+1025 GetRootFailed Cannot get root folder from the database. 
+1026 LibraryProjectExistsForFileId File belongs to a library folder. 
+1027 LibraryProjectExistsForId Folder is a library folder. 
+1028 MoveFileFailed Cannot move file. 
+1029 MoveFileExists Only have file id, not name 
+1030 ShareFileExists Only have file id, not name 
+1031 DuplicatePropertyDefName A property definition with the given name already exists. 
+1034 RenameFailed Cannot rename the file because there was some other unexpected error. 
+1035 MakeDefinitionFailed Not currently used. 
+1036 GetAllPropertyDefinitionsFailed Not currently used. 
+1037 GetAllPropertyDefinitinsExtendedFailed Not currently used. 
+1038 **GetFileVersionsByPropertySearchConditionsFailed Not currently used. 
+1041 GetPropertiesFailed Not currently used. 
+1042 AddFolderChildRootInvalid Create folder rule-check failed:  parent must exist, for all but root 
+1043 AddFolderLibraryRelationshipInvalid Create folder rule-check failed:  libs can only have non lib parent if that parent is root.  libs cannot have non lib children. 
+1044 ConcurrentShareFailed Request to share a file to a folder fails because of a concurrent request to share the file to the same folder. 
+1045 ConcurrentMoveFailed Request to move a file to a folder fails because of a concurrent request to move the file to the same folder or because of a concurrent request to move the file to another folder 
+1046 FolderCharacterLengthInvalid Request to create a folder fails because the folder name is longer than 255 characters. 
+1047 DependentExistsAttachmentFailed Unused 
+1048 RenameFailedDependentParentItemsLinked Unused 
+1049 RenameFailedDependentParentItemsAttached Unused 
+1050 DeleteFileFailedRestrictions Request to conditionally delete a file fails because there are delete restrictions (file has dependent parents files, file is checked out, or file is linked or attached to an item) 
+1051 DeleteFileFailedUnconditionalRestrictions Request to unconditionally delete a file fails because the are delete restrictions that cannot be overridden (file is linked or attached to an item) 
+1052 DeleteFileFailed Request to delete a file failed for an unspecified reason. 
+1053 DeleteFolderFailedRestrictions Request to conditionally delete a folder fails because there are delete restrictions on one or more child files (file has dependent parents files, file is checked out, or file is linked or attached to an item) 
+1054 DeleteFolderFailedUnconditionalRestrictions Request to unconditionally delete a folder fails because the are delete restrictions that cannot be overridden on one or more child files (file is linked or attached to an item) 
+1055 DeleteFolderFailed Request to delete a folder fails due to an unspecified reason 
+1056 PurgeBadParam The keep count must be >= 1, and the minimum age must be >= 0 
+1057 PurgeFailed Occurs when something goes wrong while purging file iterations from the database, or while deleting files from the file store 
+1058 UniqueFileNameRequiredViolated If the Unique File Name Required Vault option is ON, a request to Add or Checkin a file with the same name as a file already existing in the Vault will fail with this error. 
+1059 UpdateFolderFailed Occurs when an attempt to update a Folder fails for an unspecified reason. 
+1060 UpdateFolderExists Occurs when an attempt to update a Folder Name fails because another Folder with that name exists in the parent. 
+1061 BadLabelId Label ID is invalid 
+1062 BadLabelName Label Name contains invalid characters 
+1063 DuplicateLabel Label Name already exists in vault 
+1064 MakeLabelFailed Cannot create label in database. 
+1065 GetAllFilesFailed Failure while trying to get all the files. 
+1066 BadPropertyGroupId No property group with the given Id exists. 
+1067 PropertyGroupExists A property group with the specified name already exists. 
+1069 PropertyGroupEmpty The property group must be assigned property definitions 
+1072 DeletePropertyGroupFailed Request to delete a PropertyGroup failed for an unspecified reason. 
+1073 MoveFolderFailed Now used as: documentRestriction_11; documentRestriction_12; documentRestriction_13 in document world. 
+1074 MoveFolderExists Folder with the same name already exists in the destination folder 
+1075 MoveFolderDescendentCheckedOut Folder begin moved has descendant files that are checked out. 
+1076 MoveFolderChildRootInvalid Move folder rule-check failed:  parent must exist, for all but root 
+1077 MoveFolderLibraryRelationshipInvalid Move folder rule-check failed:  libs can only have non lib parent if that parent is root.  libs cannot have non lib children. 
+1078 FolderNameInvalid A null path or path will illegal characters has been passed in. 
+1079 FolderFullNameTooLong The full path of the folder is greater than 256 characters. 
+1080 IllegalNullParam A null value has been passed in where null values are not allowed. 
+1081 BadDate The date is out of range for the DB.  The date should be between 1-1-1753 and 12-31-9999 
+1082 ArraysOfDifferentSizes The input arrays were not of the same size 
+1083 LabelNameLengthInvalid The label name must be between 0 and 256 characters in length. 
+1084 UndoCheckoutNotCheckedOut Cannot undo check out of the file because the file is not currently checked out. 
+1085 BadSearchOperator The search operator is not valid. 
+1086 EmptyFolder The folder being operated on is empty. 
+1087 IllegalEmptyString A empty string has been passed in where its is not allowed. 
+1088 UnknownBOMVersion BOM information is stored with each file iteration as an XML string.  The XML format differs between Vault releases.  In order to identity the different formats, each string is marked with an namespace. 
+The server uses the namespace to determine how the XML string should be converted into a BOM object.  If the server encounters a string without a recognized namespace, it will return this code.
+1089 InvalidBOMXml During AddFile and CheckinFile calls, the client can supply BOM information for the file in the form of a OBM object.  The server then stores this information with the file iteration and it is used during the prompt process. 
+The server validates the BOM information against the defined schema, if validation fails, this code is returned.
+1090 BadPropertyDefId Property Def Id is invalid. 
+1091 CheckoutFolderInvalid The file being checked out does not live in the specified folder, therefore it cannot be used as the checkout folder. 
+1092 RestrictionsOccurred Restrictions have occurred. More information available in SoapException detail. 
+1093 GetRestrictionsFailed Failed trying to determine restrictions. 
+1094 PropertyGroupPropertyDefMinCount Property groups must include a minimum of 2 property definitions. 
+1098 MoveFileLocked The file cannot be moved because it is locked 
+1100 UploadFileDoesNotExist The upload file does not exist. 
+1101 DownloadFileSizeExceedsServerLimit The download part size exceeds the server limit. 
+1102 UpdatePropertyDefinitionFailed Failure while trying to update property definition. 
+1103 CheckinFailedAssociatedFileCheckedout The child file specified for the association is still checked out. 
+1104 SetFileStatusFailed The set file status operation failed. 
+1106 FullContentSearchContentIndexingDisabled The client has submitted a search against file content but the Vault Content Indexing is disabled. 
+1107 DimeAttachmentExpected This error will be raised if AddFile or UploadFilePart is called without including a DIME attachment. 
+1108 BadFileName This error will be raised by AddFile and AddUploadedFile is the filename supplied for the new file is null, empty or contains invalid characters.  CheckinFile and CheckinUploadedFile will raise this error if the newFilename provided contains invalid characters. 
+1109 ComponentCustomPropertyDefExists Unused 
+1110 ParamNameInvalid Unused 
+1111 DuplicateFileNamingSchemeExists  
+1112 AddFileNamingSchemeFailed An error occurred while attempting to add the new file naming scheme. 
+1113 UpdateFileNamingSchemeFailed An error occurred while attempting to update the file naming scheme. 
+1114 FileExistsRemotely The file does not exist on the local server. 
+1115 FileDoesNotExists File does not exist. 
+1116 SaveFilterConfigFailed Raised when the Filter Config information cannot be saved to disk. 
+1117 BadFileNamingScheme The file naming scheme does not exist or is invalid. 
+1118 RollbackFileNamingDescriptionsFailed File naming descriptions could not be rolled back. Multiple file naming schemes or non-consecutive file naming descriptions are not allowed. 
+1119 ReserveFileNamingDescriptionsFailed File naming descriptions could not be reserved. 
+1120 FolderFileNameCollision AddFile, CheckinFile, MoveFile, ShareFile, AddFolder 
+1121 CreateUserDefinedPropertyDefinitionsFailed An error occurred while attempting to create the new property. 
+1122 BadPropertyReindexError Bad property re-index error. 
+1123 IdentifyFilesForPropertyReindexFailed An error occurred while attempting to identify files for property re-index. 
+1124 AddDesignVisualizationAttachmentBadFileClassification The file to attach is not classified as Design Visualization. 
+1125 AddDesignVisualizationAttachmentBadAttachmentOrder The file to attach is not in the proper order. 
+1126 AddDesignVisualizationAttachmentExists A Design Visualization file is already attached. 
+1127 SetDesignVisualizationStatusFileCheckedOut The file is checked out. 
+1128 SetDesignVisualizationStatusInvalidStatus The Visualization Compliance value is invalid. 
+1129 GenerateFileNumberFailed Could not create file number. 
+1130 GenerateFileNumberFailedAutoFieldNumberUsedUp Could not create File number because the current scheme has run out of numbers. 
+1131 FileRenameReleasedParent The selected revision of the file or a revision of a file referencing it has been released. 
+1132 WarningThresholdGreaterThanMaximumThreshold The error threshold must be greater than the warning threshold. 
+1133 ThresholdOutOfRange Threshold out of range. 
+1134 ExceedBulkFileMaximumThreshold You have exceeded the maximum number of files that can be processed in a single operation. 
+1135 FailureToSaveFileForProviderUse Failure to save file for property provider use. 
+1136 UpdateFilePropertiesNotCheckedOut File properties cannot be updated. File is not checked out. 
+1137 CannotCheckoutNontipFileVersion Content source properties are not available for older versions 
+1138 FileUploadRequired This checkin operation requires an uploaded file. 
+1139 FileUploadInuse This upload ticket has already been used. 
+1140 FileUploadWrongExtension The uploaded file extension doesn't match the file name 
+1141 FilePurgeIsDisabled File purge must be enabled on this vault to proceed. Please contact your administrator 
+1147 AddDesignRepresentationFileAttachmentBadFileClassification The file to attach is not classified as Design Representation. 
+1149 DupSearchFoldersOverlap There is a folder overlap in the Duplicate Search folder configuration. 
+1200 SerializeNullObject An error occurred due to a communication failure between client and server. 
+1300 BadId Occurs when item revision ID is bad, user ID is bad 
+1301 BadUserId The user ID couldn't be used to create an item revision 
+1302 BadItemRevision The item revision couldn't be used to create the new item revision 
+1303 BadMasterItemId The master item ID didn't return the tip item revision 
+1304 BadRevisionNumber Item revision is less than or equal to current revision 
+1305 BadRevisionNumberFormat Item revision isn't in current revision scheme 
+1306 UpdateItemsFailed The item or unpinned item iteration associations could not be updated 
+1307 UpdateItemFailed The item, its attachments, or unpinned item iteration associations could not be updated 
+1308 DeleteItemsFailed Item could not be deleted 
+1309 GetTipItemRevisionsFailed Tip item revisions could not be retrieved  
+1310 GetItemRevisionHistoryFailed Item revision history could not be retrieved 
+1311 GetTipItemRevisionFailed Item revision could not be retrieved. Please refresh and try again 
+1312 GetRolledUpBOMFailed Rolled up BOM could not be retrieved 
+1313 GetAllBOMLinksAndRevisionsFailed BOM links and revisions could not be retrieved 
+1314 BOMCompareFailed The selected BOMs could not be compared 
+1315 GetNextRevisionOptionsFailed Next revision options could not be retrieved 
+1316 PromoteFileIterationsFailed File iterations could not be promoted 
+1317 UpdateItemsFromFilesFailed Could not update items from files 
+1318 GetPromoteUpdateRestrictionsFailed Could not get restrictions for promote and update 
+1319 GetItemUpdateRestrictionsFailed Could not get restrictions for item update. 
+1320 CreateItemRevisionFailed Could not create an item revision 
+1321 EditItemRevisionFailed Could not get item revision to edit 
+1322 DeleteItemIterationsFailed Could not delete item iterations 
+1323 GetLifeCycleDefsFailed Could not get lifecycle definitions 
+1324 GetItemIterationAttachmentsFailed Could not get item iteration attachments 
+1325 GetItemFileLinksFailed Could not get file links for item 
+1326 GetLifeCycleStateChangeRestrictionsFailed Could not get restrictions for lifecycle state changes 
+1327 BulkChangeLifeCycleFailed Could not perform bulk lifecycle change 
+1328 GetItemRevisionsForFileFailed Could not retrieve items associated with file. 
+1329 GetUserDefinedPropertyDefinitionsFailed Could not get property definitions. 
+1330 CreateUserDefinedPropertyDefinitionsFailed An error occurred while attempting to create the new property. 
+1341 CreateItemNumberFailed Could not create item number. 
+1344 DeleteUnusedItemNumbersFailed Could not delete unused item numbers. 
+1349 GetEditItemRevisionRestrictionsFailed Could not get restrictions for edited item. 
+1350 GetLatestItemRevisionByItemNumberFailed The item number entered cannot be found. 
+1351 GetChangeItemNumberRestrictionsFailed Could not get restrictions for change item number. 
+1352 GetChangeItemRevisionNumberRestrictionsFailed Could not get restrictions for change item number. 
+1358 BadUnitOfMeasure Invalid unit of measure. 
+1361 ZeroDefaultRevisionSchemeAssignedToCategory The category requires that a default revision scheme be assigned. 
+1362 PromoteFileIterationsConcurrencyFailed Could not promote files due to concurrency issues. 
+1364 InvalidLock An Invalid Lock has occurred.  You were not able to obtain a lock for this operation or your lock expired. 
+1365 GetDeleteItemRestrictionsFailed Could not get restrictions for delete item. 
+1366 GetAllBOMStructureTypesFailed Could not get BOM structure types. 
+1367 DuplicateName The name already exists. 
+1368 DuplicateId Duplicate property id exists. 
+1369 EntityInUse Property is in use. 
+1370 InvalidArrayLength Array length is invalid. 
+1371 GetItemTypeByIdFailed An error occurred while attempting to get the item type. 
+1372 GetAllItemTypesFailed An error occurred while attempting to get the item types. 
+1373 AddItemTypeFailed An error occurred while attempting to add a new item type. 
+1374 UpdateItemTypeFailed An error occurred while attempting to update the item type. 
+1375 DeleteItemTypeFailed An error occurred while attempting to delete the item type. 
+1376 AddRevisionSequenceSchemeFailed An error occurred while attempting to add the new revision sequence. 
+1377 AddRevisionFormatFailed An error occurred while attempting to add the new revision sequence schemes. 
+1378 GetAllRevisionFormatsFailed An error occurred while attempting to get all the revision formats. 
+1379 GetAllRevisionSequenceSchemesFailed An error occurred while attempting to get all the revision sequence schemes. 
+1381 UpdateItemIterationBOMLinksFailed Update BOM failed. 
+1384 NotEditable Item is not editable. 
+1385 SetItemLifeCycleStateFailed An error occurred while attempting to change item's lifecycle state. 
+1386 GetItemIterationsByIterationIdsFailed Could not retrieve item iterations. 
+1387 RestrictionsOccurred Restrictions have occurred. 
+1388 GetRestrictionsFailed Failed trying to determine restrictions. 
+1389 IncompatibleDataType Data type is incompatible. 
+1390 EntityDeleted Entity was deleted. 
+1391 CircularReference A circular reference was found. 
+1392 DuplicatePriority Priority already exists. 
+1393 DuplicateMapping Mapping already exists. 
+1394 GetMappablePropertyDefsFailed Could not get mapped properties. 
+1395 InvalidString Invalid String 
+1400 GetItemPropertiesFailed Could not get item properties. 
+1401 GetAllItemPropertyDefinitionsFailed Could not get all item property definitions. 
+1402 DuplicateLabel The revision sequence scheme contains duplicate values in its list of labels. 
+1403 IntrinsicPropertyNameCollision The property name matches a system property. 
+1404 GetItemRevisionByItemIterationIDFailed Item revision could not be retrieved. 
+1405 BadItemIterationId Item version identified incorrectly. 
+1406 ItemNumberInUse The Item Number entered is already in use. 
+1407 RevisionSequenceSchemeLengthGreaterThan16 The character number of Item revision sequence scheme can't be larger than 16. 
+1408 GetRollbackItemLifeCycleStatesInfoFailed Could not retrieve rollback information. 
+1409 RollbackItemLifeCycleStatesFailed LifeCycle state rollback failed. 
+1410 RollbackItemLifeCycleStatesCancelFailed Rollback operations canceled, remove locks. 
+1411 GetItemRefDesPropertiesFailed Could not retrieve Reference Designator properties. 
+1412 GetAllItemRefDesPropertyDefinitionsFailed Could not retrieve Reference Designator property definitions. 
+1413 DuplicateBomSchemeName Unused 
+1414 GetItemDuplicateCandidatesFailed Unused 
+1415 ReassignComponentsToDifferentItemsFailed Could not reassign links. 
+1416 GetReleasedRevisionsFailed Could not retrieve revision information. 
+1417 GetBOMFailedNothingEffective No Effective BOM for the date provided. 
+1418 GetDWFWatermarksByItemIdFailed Could not retrieve Watermark information. 
+1419 CreateDWFWatermarkDefinitionFailed Could not create watermark. 
+1420 GetAllDWFWatermarkDefinitionsFailed Could not retrieve watermark definitions. 
+1421 GetDWFWatermarkByFileIterationId Could not retrieve Watermark information. 
+1422 GetEnableDWFWatermarkingFailed Could not retrieve Watermark information. 
+1423 SetEnableDWFWatermarkingFailed Could not set Watermark information. 
+1424 UpdateDWFWatermarkDefinitionsFailed Could not update Watermark information. 
+1425 BadFileIterationId File version identified incorrectly. 
+1426 WatermarkRetrievalFailed Could not retrieve Watermark information. 
+1427 DuplicateConstraintDefForProperty Could not create a property constraint for the property because one of the some type already exists. 
+1428 InvalidStringLength The string length is outside the allowable limits. 
+1429 IllegalUseOfNull The supplied Null is not an acceptable value. 
+1430 PropertyDefinitionDoesNotExist The property referenced definition does not exist. 
+1431 ItemTypeDoesNotExist Unused 
+1432 InvalidConstraintExpression The value supplied for the constraint expression is invalid. 
+1433 GetItemPackAndGoInfoFailed Unable to retrieve pack and go information. 
+1434 InvalidPropertyConstraintEntityTypeId The supplied Item Type ID is not valid for the property constraint. 
+1435 InvalidSortExpression The supplied sort expression is not valid. 
+1437 BadUnitOfMeasureId Invalid unit of measure ID. 
+1440 GetItemMasterIdsForItemHistoryPurgeFailed Item History purge failed 
+1441 PurgeItemHistoryByItemMasterIdFailed Unable to purge item history by item master ID 
+1442 GetEnablementConfigurationFailed Could not retrieve the Enablement configuration setting. 
+1443 SetEnablementConfigurationFailed Could not set the Enablement configuration setting. 
+1445 GetItemRevisionByItemNumberAndRevisionNumberFailed The item number and/or revision number entered cannot be found. 
+1446 GetItemAssignmentRestrictionsFailed Could not retrieve the item assignment restrictions. 
+1447 SetItemAssignmentRestrictionsFailed Could not set the item assignment restrictions. 
+1448 GetItemBOMLinksFailed An error occurred while attempting to get item BOM links. 
+1450 ImportItemDataFromXMLFailed Unable to import item data from XML 
+1451 ExportBOMDataToXMLFailed Unable to export BOM data to XML 
+1452 ImportBOMDataFromXMLFailed Unable to import BOM data from XML 
+1453 ExportBOMOtherDataToXMLFailed Unable to export BOM other data to XML 
+1454 ImportBOMOtherDataFromXMLFailed Unable to import BOM other data from XML 
+1455 ItemProvisionalComponentDataInvalid The file was added in a way that did not include the correct item data. 
+1456 ExportPropDefDataToXMLFailed Property definition data export failed 
+1457 ImportPropDefDataFromXMLFailed Property definition data import failed 
+1458 ExportBOMCompRefDesDataToXMLFailed BOM component reference designator data export failed 
+1459 ImportUOfMDataFromXMLFailed Import unit of measure data failed 
+1460 GetItemAssignmentBehavior Could not retrieve the "Item Assignment Behavior" setting 
+1461 SetItemAssignmentBehavior Could not set the "Item Assignment Behavior" setting 
+1464 BadBOMComponentId BOM component identified incorrectly. Please refresh and try again 
+1465 BOMComponentAlreadyLinkedToItem BOM component is already linked to an item 
+1468 ExternalComponentUnassignable A child component is unassignable. Please check-out and check-in the target and parent files using the appropriate add-in 
+1469 SubcomponentLinksNotAllowed The current server configuration does not allow subcomponent links. 
+1500 System_Error A system level error occurred while trying to communicate with the Queue. 
+1507 CreateDWFPackageError An error occurred while attempting to create a DWF package. 
+1524 InvalidImportFileFormat An error occurred while attempting to Import the file due to unsupported file format. 
+1525 NoItemExists An error occurred because no valid items exist. 
+1526 InvalidItemExists An error occurred because of invalid items. 
+1527 InvalidBOMStructure An error occurred because of an invalid BOM structure. 
+1528 ReadCSVFileFailed An error occurred while attempting to read the CSV file. 
+1529 ReadTDLFileFailed An error occurred while attempting to read the TDL file. 
+1530 ReadXmlFileFailed An error occurred while attempting to read the XML file. 
+1531 ReadDwfFileFailed An error occurred while attempting to read the DWF file. 
+1532 WriteCSVFileFailed An error occurred while attempting to write the CSV file. 
+1533 WriteTDLFileFailed An error occurred while attempting to write the TDL file. 
+1534 WriteXmlFileFailed An error occurred while attempting to write the XML file. 
+1535 WriteDwfFileFailed An error occurred while attempting to write the DWF file. 
+1536 AttachmentNotFound An error occurred because no attached file was found. 
+1538 GetERPFileFromStoreFailed An error occurred while attempting to get the file from the ERP File Store. 
+1539 InvalidMappingInfo An error occurred because the mapping information was invalid. 
+1540 CreateTempItemsAndBOMFailed An error occurred during Import while attempting to create temporary Items. 
+1541 UpdateTempItemsAndBOMFailed An error occurred during Import while attempting to update temporary Items. 
+1542 CommitItemsAndBOMFailed An error occurred during Import while attempting to commit temporary Items. 
+1544 GetExportItemInfoFailed An error occurred while attempting to get Item information. 
+1549 InvalidFileType An error occurred because the file was of the wrong specified format. 
+1550 DirectoryNotExist An error occurred because the specified directory does not exist. 
+1551 BomStructureEmpty An error occurred because the specified BOM information is empty. 
+1552 ItemStructureEmpty An error occurred because the specified Item information is empty. 
+1553 DataMapEmpty An error occurred because the specified Mapping Information is empty. 
+1554 SendResultsEmailFailed An error occurred while trying to send the email. 
+1555 SendResultsEmailAttachmentsError An error occurred while trying to send the email attachments. 
+1600 StateHasChanged The state has changed since the last refresh so the action is not valid. 
+1601 ActionDenied OBSOLETE 
+1602 UpdateDenied An update was attempted to the change order that is not permitted in the current state for the current user. 
+1603 BadApproveDeadline The approval deadline is in the past 
+1604 BadChangeOrderId No such change order exists with the specified ID 
+1605 BadNumberingSchemeId No such numbering scheme exists for change orders with the specified ID 
+1606 BadRoutingId No routing exists for the change order process with the specified ID 
+1607 ChangeOrderNumberExists Cannot add a change order since the change order number already exists. 
+1608 GetChangeOrderFailed Could not find the specified change order 
+1609 AddChangeOrderFailed Unable to add change order 
+1610 MissingMasterItemId The change order must contain at least one item. 
+1611 ChangeOrderLocked The change order is locked by another user 
+1612 ItemOnAnotherChangeOrder The item is being managed by another change order 
+1613 AddChangeOrderTypeFailed A change order type defines a set of properties that should be attached to a change order. 
+1615 NumberingSchemeInUse The numbering scheme cannot be modified or deleted because it is in use. 
+1616 GetAllChangeOrderTypesFailed Could not get change order types 
+1617 UpdateChangeOrderTypeFailed Could not update default properties for change order type. 
+1618 GetChangeOrderNumberFailed Could not get a number for a change order 
+1628 CannotEditItem Cannot make item on change order editable 
+1629 SetChangeOrderItemEditableFailed Failed to make item on change order editable/not editable. 
+1630 OwnerMustBeChangeRequestor The change order creator cannot have change requestor role revoked. 
+1631 NonChangeRequestorDenied You must have the Change Requestor role on this change order's routing to perform the operation. 
+1633 RestrictionsOccurred Restrictions have occurred. More information available in SoapException detail. 
+1634 ItemObsolete You cannot add obsolete items to a change order 
+1635 GetChangeOrderNumberSchemeStartFailed used as IDS_NUMBERINGSCHEME_GET_STARTNUMBER_FAILED in Change Order world. 
+1636 GetChangeOrderNumberSchemeStartFailedProviderDoesNotSupport used as IDS_NUMBERINGSCHEME_GET_STARTNUMBER_PROVIDER_ERROR in Change Order world. 
+1637 SetChangeOrderNumberSchemeStartFailed used as IDS_NUMBERINGSCHEME_SET_STARTNUMBER_FAILED in Change Order world. 
+1638 SetChangeOrderNumberSchemeStartFailedProviderDoesNotSupport used as IDS_NUMBERINGSCHEME_SET_STARTNUMBER_PROVIDER_ERROR in Change Order world. 
+1639 SetChangeOrderNumberSchemeStartFailedStartNumberMustBeGreaterThanCurrent used as IDS_NUMBERINGSCHEME_SET_STARTNUMBER_LESS_ERROR in Change Order world. 
+1640 GetChangeOrderNumberFailedAutoFieldNumberUsedUp used as IDS_CHANGEORDER_CREATE_FAILED in Change Order world. 
+1641 GetRollbackItemLifeCycleStatesInfoFailed Could not retrieve rollback information. 
+1642 RollbackItemLifeCycleStatesFailed LifeCycle state rollback failed. 
+1643 RollbackItemLifeCycleStatesCancelFailed Rollback operations canceled. 
+1644 ChangeOrderNotActive Change Order is not active. 
+1645 ItemNotOnChangeOrder Item is not on the Change Order. 
+1646 GetUserDefinedPropertyDefinitionIdsByChangeOrderTypeIdFailed Could not get item related user defined property definitions for change order type. 
+1647 DeleteChangeOrderFailed Delete operation failed. 
+1648 NonResponsibleEngineerDenied User must be assigned the role of Responsible Engineer. 
+1649 GetAllPropertyDefinitionsFailed Could not get all change order property definitions. 
+1650 GetItemPropertyDefinitionsFailed Could not get item property definitions 
+1651 GetAllUserDefinedPropertyDefinitionsFailed Could not get user defined property definitions 
+1652 AddCustomPropertyDefFailed Failed to add the custom property definition. 
+1653 AddItemUserDefinedPropertyDefinitionsFailed Unable to add user defined property definition to item 
+1654 GetPropertiesByChangeOrderIdsFailed Unable to get properties by change order ID 
+1655 GetItemPropertiesByChangeOrderIdsAndItemIdsFailed Unable to get properties by change order ID and item ID 
+1656 InappropriateRouting The change order routing selected is not appropriate to work with item. 
+1657 IllegalNullParam An expected parameter value was not provided. 
+1658 GetMarkupFolderFailed Unable to get markup folder 
+1659 NoMarkupFolder Unable to get markup folder 
+1660 InvalidMarkupFolderID Invalid markup folder 
+1661 SetMarkupFolderFailed Invalid markup folder 
+1664 GetRequireReviewLifeCycleStateBeforeChangeOrderReviewFailed Could not get the Require Review Lifecycle state before Change Order review. 
+1665 SetRequireReviewLifeCycleStateBeforeChangeOrderReviewFailed Could not set the Require Review Lifecycle state before Change Order review. 
+1666 GetDefaultWorkflowFailed Unable to get default workflow 
+1667 SetDefaultWorkflowFailed Unable to set default workflow 
+1668 GetAllActiveWorkflowsFailed Unable to get all active workflows 
+1669 GetWorkflowInfoFailed Unable to get workflow info 
+1670 GetChangeOrderMarkupFolderIdFailed Unable to get change order Markup folder ID 
+1671 SetChangeOrderMarkupFolderIdFailed Unable to set change order Markup folder ID 
+1674 NoDefaultWorkflow No default workflow available 
+1675 BadWorfklowID Invalid workflow ID pattern/format 
+1676 GetInitialWorkflowFailed Unable to get initial workflow 
+1677 BadWorkflowRoleID Invalid workflow role ID 
+1678 BadWorkflowActiveID Invalid WorkFlowActiveID. 
+1679 ItemlessChangeOrder System is configured so Change Orders with no associated items cannot be transitioned out of Work state. 
+1680 AddCommentDenied Unable to add comment 
+1681 AddCommentFailed Unable to add comment 
+1682 GetChangeOrderMarkupFolderConfigurationFailed Unable to get the change order markup folder configuration 
+1683 SetChangeOrderMarkupFolderConfigurationFailed Unable to set the change order markup folder configuration 
+1684 AddMarkupFailed Unable to add a markup 
+1685 AddMarkupDenied Unable to add a markup 
+1686 NullMsgComponents Message components are null 
+1687 BadDate Bad date format 
+1688 CheckoutFileToChangeOrder Change order cannot be created because the file is checked out. 
+1689 FileOnAnotherChangeOrder The file is currently on another change order. 
+1690 ChangeOrderWithCheckoutFileCannotCloseOrCancel Change order cannot be closed or canceled because file linked with the change order is checked out. 
+1691 DeleteItemUserDefinedPropertyDefinitionsFailed Could not delete item user defined property definition. 
+2000 PublishPackageFailed The publish operation failed due to some underlying exception. 
+2001 PublishDataAlreadyExists An attempt to publish new data failed because it would overwrite existing data 
+2002 PublishOutOfSyncObject An attempt to re-publish data failed because it has become out of date. 
+2003 PublishLinkToSelf Attempt to publish with a derived link to self. 
+2010 WriteLibraryInfoFailed An error occurred while trying to write LibraryInfo object to library. 
+2011 ReadLibraryInfoFailed An error occurred while trying to read LibraryInfo object from library. 
+2012 LibraryIdNotFound The specified library ID was not found. 
+2019 InvalidFamilyAspect The specified aspect name is either not supported or is being used improperly. 
+2020 ObjectDataNotFound An attempt to get or delete the specified object data, or to get its version failed because no such object exists. 
+2021 AddCategory_ParentNotFound An attempt to add a child category failed because its parent does not exist. 
+2022 UpdateCategory_CategoryNotFound Category not found. 
+2023 AttachLibrary_GeneralFailure Unused 
+2024 AttachLibrary_CheckFileExistence Unused 
+2025 AttachLibrary_DataFileNotFound Unused 
+2026 AttachLibrary_InitializeRolesAndPermissions Unused 
+2027 AttachLibrary_AttachKnowledgeVault Unused 
+2028 AttachLibrary_ReadLibraryInfo Unused 
+2029 AttachLibrary_MissingLibraryInfo Unused 
+2030 AttachLibrary_PrepareKnowledgeVaultMetaData Unused 
+2031 AttachLibrary_WriteKnowledgeVaultMetaData Unused 
+2032 AttachLibrary_UpdateLibraryUsers Unused 
+2033 CreateLibrary_GeneralFailure Unused 
+2034 CreateLibrary_InitializeRolesAndPermissions Unused 
+2035 CreateLibrary_AddKnowledgeVault Unused 
+2036 CreateLibrary_PrepareLibraryInfo Unused 
+2037 CreateLibrary_WriteLibraryInfo Unused 
+2038 CreateLibrary_PrepareKnowledgeVaultMetaData Unused 
+2039 CreateLibrary_WriteKnowledgeVaultMetaData Unused 
+2040 CreateLibrary_UpdateLibraryUsers Unused 
+2041 UpdateLibraryUsers_MissingUsers Unused 
+2042 UpdateLibraryUsers_AddFailed Unused 
+2043 DetachLibrary_DatabaseNotFound Unused 
+2044 TableOfContents_NoLanguageSpecified A null or empty lang string was passed to GetTableOfContents 
+2045 CreateLibrary_AlreadyExists Unused 
+2050 InvalidSchema_NotCompiled The schema has not been compiled. 
+2051 InvalidSchema_NoNamespace The 'targetNamespace' attribute of the schema must be specified and be unique. 
+2052 InvalidSchema_UnsupportedRestriction The restriction is not currently supported. 
+2053 InvalidSchema_UnsupportedSimpleType Simple type is currently not supported. 
+2054 InvalidSchema_UnsupportedRestrictionType Only simple types are supported when specifying XSD type restrictions. 
+2055 InvalidSchema_UnsupportedDataType The data type is currently not supported. 
+2056 InvalidQuery_MissingRootNode Search was not called with proper query XML 
+2057 InvalidQuery_NoReturnValues Search did not specify anything to return 
+2058 InvalidQuery_MissingFieldSpecifier External field specifier is missing. 
+2059 InvalidQuery_UnsupportedDataType The data type is not supported. 
+2060 InvalidQuery_MissingReturnProperty Search did not fully specify a return value 
+2061 InvalidQuery_DuplicateReference Search specified a duplicate reference in a return value 
+2062 InvalidQuery_InvalidFieldReference Search referenced a return value that does not exist 
+2063 InvalidQuery_MissingOperator Search constraint did not specify an operator 
+2064 InvalidQuery_MissingSearchCriterion Search constraint did not specify a value 
+2065 InvalidQuery_MissingPropertyRelation The correct property relation must be specified. 
+2066 InvalidQuery_UnsupportedSystemProperty Search returns or is constrained by a a property that does not exist 
+2067 InvalidQuery_InvalidSchemaNamespace The namespace does not have an associated schema. 
+2068 InvalidQuery_InvalidProperty The property does not have a field associated with it. 
+2069 InvalidQuery_InvalidRelation The relation does not have a table associated with it. 
+2070 Resource_MissingResourceID Resource ID not specified. 
+2071 Resource_StringsNotFound Unable to get the string resource(s) for the specified resource ID 
+2072 Resource_LocaleNotFound Unable to get the string value for a resource in the specified language. 
+2073 InvalidResource_MissingRootNode Missing root node in the document. 
+2074 InvalidResource_LocaleMismatch A different number of locales are supported for different strings. All strings must support the same locales. 
+2075 InvalidResource_MissingLocale Missing locale. 
+2076 QueryExecutionError Search resulted in a SQL error 
+2077 InternalError Internal indexing error. 
+2078 InvalidQuery_UnknownCategoryParameter Search contained an unknown category parameter 
+2079 InvalidQuery_InvalidNumberOfValues The number of values specified is invalid. 
+3000 XmlSchemaIsInvalid Invalid schema 
+3001 XmlNamespaceIncorrect XML error - namespace is incorrect 
+3002 FailedToFindPropertyDefinition Property definition not found. 
+3003 InvalidParameterInput Invalid parameter input. 
+3004 InternalError Internal Error. 
+3005 UnknownEntityClass Invalid Entity Class. 
+3006 UnknownEntityClassId Entity Class not found. 
+3007 UnknownPropertyDefinitionId Invalid Property Definition Id. 
+3008 InvalidPropertyDefDataTypeMapping Invalid Property Definition mapping - data types must match. 
+3009 EntityDataCreationFailed EntityData creation failed. 
+3010 InvalidTargetRollbackLifecycleState There is no valid lifecycle state to rollback to. 
+3011 LifeCycleChangesRestrictedToChangeOrder Manual lifecycle state changes are prohibited. Please contact your administrator. 
+3100 BadLifecycleDefinitionId The specified lifecycle definition could not be found. 
+3101 BadStateId The specified lifecycle state could not be found. 
+3102 BadTransitionId The specified lifecycle transition could not be found. 
+3104 AddLifeCycleStateTransitionFailed An error occurred while adding lifecycle state transition. 
+3105 AddLifeCycleStateFailed An error occurred while adding lifecycle state. 
+3106 AddLifeCycleDefinitionFailed An error occurred while adding lifecycle definition. 
+3107 AddLifeCycleStateTransitionACLFailed An error occurred while adding lifecycle state transition ACL. 
+3108 InvalidUserName The specified user name is not valid. 
+3109 CannotChangeDefinitionToItself Already in the to lifecycle definition. 
+3110 InvalidDefinitionChange The to lifecycle definition is not in the available lifecycle definition list. 
+3111 InvalidStateTransition Lifecycle state transition not defined. 
+3115 DuplicatedStateDisplayName The lifecycle state name already exists. 
+3116 DuplicatedDefinitionDisplayName The lifecycle definition name already exists. 
+3120 LifecycleDefinitionAlreadyExists The lifecycle definition already exists. 
+3121 LifecycleStateAlreadyExists The lifecycle state name already exists in this definition. 
+3122 LifecycleStateTransitionAlreadyExists The lifecycle state transition already exists. 
+3123 RulePropDefDoesNotExist The property does not exist for the lifecycle definition condition. 
+3124 LifecycleDefinitionBeyondMaxLength The lifecycle definition name specified is too long. 
+3125 TransitionSourceStateNotExist The source lifecycle state in the transition does not exist. 
+3126 TransitionDestinationStateNotExist The destination lifecycle state in the transition does not exist. 
+3127 TransitionCrossLifecycleDefinition Transition with two lifecycle states belonging to two different lifecycle definitions is not allowed. 
+3129 LifecycleStateToAndFromStatesAreIdentical The lifecycle to and from states are identical. 
+3130 InvalidPurgeRestrictionOption The purge restriction option is invalid for the lifecycle. 
+3200 StateIsNotUnique Lifecycle state name is not unique 
+3201 InitialStateNotExist Initial state does not exist in lifecycle states 
+3202 FromStateNotExist From state does not exist in lifecycle states 
+3203 ToStateNotExist To state does not exist in lifecycle states. 
+3204 FromStateEqualToState From state and to state cannot be the same. 
+3205 FromStateToStateNotUnique Composite of StateTransition/FromState and StateTransition/ToState must be unique 
+3206 DefinitionDisplayNameResourceNotExist Definition's display name resource doesn't exist 
+3207 DefinitionDisplayNameResourceIsEmpty Definition's display name resource is empty 
+3208 DefinitionDescriptionResourceNotExist Definition's description resource doesn't exist 
+3209 StateDisplayNameResourceNotExist State's display name resource doesn't exist 
+3210 StateDisplayNameResourceIsEmpty State's display name resource is empty 
+3211 StateDescriptionResourceNotExist State's description resource doesn't exist 
+3212 ValueResourceNotExist Comment's value resource doesn't exist 
+3213 NeedOneDefaultComment One state has no default comment or has more than 1 default comment 
+3214 InvalidCriteria Rule's property name is invalid 
+3215 RulePropDefDoesNotExist Rule's property definition cannot be found 
+3217 RevisionDefinitionBeyondMaxLength The revision scheme format exceeded the max allowed length 
+3300 RevisionSequenceInUseCannotBeRemoved Revision Scheme Format is used by revision scheme definition and cannot be deleted. 
+3304 RevisionSequenceInUseCannotBeUpdated Revision Scheme Format is used by revision scheme definition and cannot be edited. 
+3306 BadRevisionDefinitionId Revision Scheme not found. 
+3307 BadRevisionSequenceId Revision Scheme Format not found. 
+3308 RevisionSequenceDuplicateName The Revision Scheme Format already exists. 
+3309 RevisionDefinitionDuplicateName The Revision Scheme Definition already exists. 
+3310 SeparatorNotValid The delimiter is invalid. 
+3311 SeparatorExistInRevisionSequence The revision sequence contains characters that incompatible with the revision level delimiter. 
+3312 InvalidLabel The scheme sequence value is invalid. 
+3313 RevisionLabelIsNullOrEmpty The Revision Scheme Format has null or empty scheme sequence value. 
+3314 RevisionLabelBeyondMaxLength The scheme sequence value is beyond the max length. 
+3315 RevisionLabelDuplicate The scheme sequence value already exists. 
+3316 BadStartLabel The Revision Scheme Format has an error in the default scheme sequence value. 
+3317 RevisionDefinitionBeyondMaxLength The Revision Scheme Format exceeded the max allowed length. 
+3321 InvalidDefinitionChange Invalid Revision Definition change. 
+3322 InvalidRevisionNumber Invalid Revision number. 
+3330 GetRevisionDefinitionIdsByMasterIdsFailed An error occurred while getting revision definitions being used by the given objects. 
+3331 GetNextRevisionNumbersByMasterIdsFailed An error occurred while getting next revision numbers. 
+3333 SetRevisionNumberFailed An error occurred while setting revision number. 
+3334 SetRevisionNumbersFailed An error occurred while setting revision numbers. 
+3335 SetRevisionDefinitionAndNumbersFailed An error occurred while setting revision definition and numbers. 
+3336 GetAllRevisionDefinitionInfoFailed An error occurred while getting all revision definition information. 
+3337 GetRevisionDefinitionInfoByIdsFailed An error occurred while getting revision definition information. 
+3338 AddRevisionDefinitionFailed Add Revision Scheme Definition Failed. 
+3339 UpdateRevisionDefinitionFailed Update Revision Scheme Definition Failed. 
+3340 DeleteRevisionDefinitionFailed Delete Revision Scheme Definition Failed. 
+3341 AddRevisionSequenceFailed Add Revision Scheme Format Failed. 
+3342 UpdateRevisionSequenceFailed Update Revision Scheme Format Failed. 
+3343 DeleteRevisionSequenceFailed Delete Revision Scheme Format Failed. 
+3344 SystemRevisionSequenceNotExist System Revision Scheme Format does not exist. 
+3345 ImportRevisionDefinitionFailed Import Revision Scheme Definition Failed. 
+3346 RevisionDefinitionAlreadyExists Scheme already exists. 
+3400 RevisionDefinitionDisplayNameNotUnique Revision definition display name should be unique. 
+3401 RevisionDefinitionDisplayNameIsEmpty Definition display name is empty. 
+3402 RevisionDefinitionDisplayNameBeyondMaxLength Definition display name is too long. 
+3403 RevisionDefinitionDisplayNameResourceNotExist Definition display name's resource doesn't exist. 
+3404 RevisionDefinitionDisplayNameResourceIsEmpty Definition display name's resource is empty. 
+3405 RevisionDefinitionDescriptionResourceNotExist Definition description's resource doesn't exist. 
+3406 RevisionDefinitionNameIsNullOrEmpty Definition name is null or empty. 
+3407 RevisionDefinitionNameIsNotUnique Definition name is not unique. 
+3408 RevisionDefinitionNameBeyondMaxLength Definition name is too long. 
+3409 RevisionSequenceNotExist The sequence the definition refers to does not exist 
+3410 RevisionSequenceDisplayNameNotUnique Sequence display name isn't unique. 
+3411 RevisionSequenceDisplayNameIsEmpty Sequence display name is empty. 
+3412 RevisionSequenceDisplayNameBeyondMaxLength Sequence display name is too long. 
+3413 RevisionSequenceDisplayNameResourceNotExist Sequence display name's resource doesn't exist. 
+3414 RevisionSequenceDisplayNameResourceIsEmpty Sequence display name's resource doesn't exist. 
+3415 RevisionSequenceDescriptionResourceNotExist Sequence description's resource doesn't exist. 
+3416 RevisionSequenceNameIsNullOrEmpty Sequence name is null or empty. 
+3417 RevisionSequenceNameIsNotUnique Sequence name is not unique. 
+3418 RevisionSequenceNameBeyondMaxLength Sequence name is too long. 
+3419 RevisionLabelIsTooLess The number of labels should be more than 1 
+3420 NeedOneDefaultRevisionLabel no or more than one default label 
+3421 RevisionLabelIsEmpty Revision label is empty. 
+3422 RevisionLabelIsInvalid Label does not meet the pattern 
+3423 RevisionLabelIsNotUnique Label is not unique 
+3424 RevisionLabelBeyondMaxLength Label is too long. 
+3425 RevisionCommentValueIsEmpty Comment value is empty. 
+3426 RevisionCommentValueBeyondMaxLength Comment value is too long. 
+3427 RevisionCommentValueResourceNotExist Comment value resource doesn't exist. 
+3428 RevisionCommentValueResourceIsEmpty Comment value resource is empty. 
+3429 NeedOneDefaultRevisionComment No or more than 1 default comment 
+3430 RevisionDefinitionDescriptionBeyondMaxLength Description is too long. 
+3431 SeparatorExistInRevisionSequence Separator exists in revision labels 
+3432 SeparatorNotValid Separator is not valid. 
+3433 SeparatorIsEmpty Separator is empty. 
+3434 SchemaIsInvalid Schema is invalid. 
+3500 BehaviorClassDoesNotSupportRules The behavior class configuration does not support rules. 
+3501 UnknownBehaviorClass The behavior class is not in the list of known behavior classes. 
+3502 UnknownBehaviorClassId The behavior class ID is not valid. 
+3503 FailureToGetBehaviorType The behavior class type was not found. 
+3504 FailureToCreateBehaviorClassInstance There was a failure while trying to create a behavior class instance. 
+3505 FailureToGetPropertySetId There was a failure while trying to get the behavior property set ID. 
+3506 BehaviorClassFailedToProvideBehaviorView The behavior class failed to provide a view to get the behaviors. 
+3507 UnknownBehavior The behavior does not exist. 
+3508 BehaviorCannotBeAssignedAsDefault All available default behaviors for the Entity class are filled. 
+3509 BehaviorAlreadyAssocToEntityClass The behavior is already associated with the Entity class. 
+3510 UnknownEntityAssocTable Invalid Entity Association table. 
+3511 InvalidBehaviorsForAssocToEntityClass The behaviors are not associated with the Entity class. 
+3512 TooManyDefaultBehavoirsAssigned There is an attempt to associate too many default behaviors with the Entity class. 
+3513 ZeroDefaultBehaviorsNoAllowed There are no default behaviors assigned to the Entity class and the AllowNone option is set to false. 
+3514 UnknownBehaviorId The behavior ID was not found. 
+3515 CannotDeleteBehavior_InUseByEntity The behavior cannot be deleted as it is being used by an Entity. 
+3516 CannotDeleteBehavior_InUseByAnotherBehavior The behavior cannot be deleted as it is being referenced by another behavior. 
+3517 CannotDeleteBehavior_ItIsAnEntityClassDefault The behavior cannot be deleted as it is the default behavior for an Entity. 
+3518 CannotDeleteBehavior_ReasonUnknown The behavior cannot be deleted due to unknown reasons. 
+3519 UnknownBehaviorIdOrIsNotAssocToEntityClass The behavior is unknown or is not associated with an Entity Class. 
+3600 InvalidPropertySetGUID Invalid property set ID 
+3601 BehaviorClassNameNotProvided Behavior class name is not available 
+3603 PropertyDefsCannotBeAssigned Can not assign property definitions 
+3604 PropertyDefDisplayNameNotProvided Property definition display name is not provided 
+3605 TooManyDefaultBehaviorsAssigned More than one default behavior found 
+3700 UnknownCategoryId The behavior is unknown or is not associated with an Entity Class. 
+3701 CategoryToCopyNotAssocToEntityClass The category to copy is not associated with the entity class. 
+3702 FailureToFindCategoryRuleSet The category ruleset was not found. 
+3703 FailureToFindCategoryForEntity The category for the entity was not found. 
+3704 CategoryIdNotAssocToEntityClass The category is not associated with the Entity class. 
+3705 CategoryAlreadyExists The category already exists. 
+3706 UnknownCategory The category is invalid. 
+3707 EntityClassDoesNotSupportCategoryRules The entity class does not support the category rules. 
+3708 EntityIdDoesNotMatchEntityClass The EntityID does not match the entity class. 
+3709 CategoryCfgCopyFailed There was a failure while trying to copy the category configuration. 
+3710 CategoryUpdateFailed There was a failure while trying to update the category. 
+3711 InvalidCategoryDisplayName Category name is invalid 
+3800 CategoryDisplayNameNotProvided Category display name is not provided 
+3801 InvalidColor Category color is invalid 
+3802 UnknownSupportedBehaviorClass Supported behavior class is unknown 
+3803 MissingRequiredBehavior Required behavior is missing 
+3804 TooManyDefaultBehaviorsAssigned There is an attempt to associate too many default behaviors with the behavior class. 
+3805 RulePropDefDoesNotExist The property definition for the rule doesn't exist. 
+3806 UnknownCategory The category ruleset does not have a valid category. 
+3900 UpdatePropertyDefMappingsFailed An error occurred while attempting to update the property mappings. 
+3901 DuplicateMapping Mapping already exists. 
+3902 NotUserDefinedPropertyDef Property def is not user defined. 
+3903 SelfMapping Property definition cannot map to itself. 
+3904 NotFileIterationPropertyDef UDP mapping must be to an file property. 
+3905 NotIndexedFileProperty UDP mapping must be to an indexed file property. 
+3906 GetUserDefinedPropertyDefinitionsFailed An error occurred while attempting to retrieve the property definition. 
+3907 UpdateUserDefinedPropertyDefFailed An error occurred while attempting to update the property definition. 
+3908 UpdatePropertyValuesFailed An error occurred while attempting to update the property value(s). 
+3909 GetPropertyDefDeleteRestrictionsFailed An error occurred while attempting to get the restrictions of the deleting property definition. 
+3910 DeletePropertyDefsFailed An error occurred while attempting to delete the property definition(s). 
+3911 AddOrRemovePropertyFailed An error occurred while attempting to add or remove properties. 
+3912 AddPropertyConstraintsFailed An error occurred while attempting to add property constraints. 
+3913 UpdatePropertyConstraintsFailed An error occurred while attempting to update property constraints. 
+3914 DeletePropertyConstraintsFailed An error occurred while attempting to delete property constraints. 
+3915 GetPropertyConstraintFailuresFailed An error occurred while attempting to get property constraint failures. 
+3916 CreateUserDefinedPropertyDefinitionsFailed An error occurred while attempting to create the property definition. 
+3917 InvalidOperationOnSpecificConstraintType Unsupported operation happens on this type of property constraint. 
+3918 DuplicateDisplayName The display name already exists. 
+3919 GetPropertyDefinitionsFailed An error occurred while attempting to retrieve property definitions. 
+3920 EntityClassIdDoesNotExist Entity Class not found. 
+3921 UserDefinedPropertyDefIdDoesNotExist User Defined Property not found. 
+3922 UserDefinedPropertyDefIdHasAnAssignedEntityClass User Defined Property definition already has an assigned Entity Class. 
+3923 DisplayNameCollision The display name matches a user defined property. 
+3924 InvalidMappingTarget_TOPropertyIsReadOnly Certain Inventor file properties are read-only.  Trying to write to them will throw exceptions (from Inventor APIs), so we should not allow mappings TO them.
+This message will probably never get used, since the client should not allow users to create such a mapping.
+This is a temporary solution for the May 2008 release.   The property subsystem should account for read-only properties in the Sydney release, thus removing the need for this Inventor-specific logic. 
+3925 InvalidMapping_DifferentDatatypes Mapping properties of different data types is not supported. 
+3926 CheckCompliancesFailed An error occurred while attempting to check compliance for related entities. 
+3927 DuplicateListValue Property list values contains duplicates 
+3928 ListDoesNotIncludeDefaultValue Property list does not include a default value 
+3929 InvalidMappingTarget_FROMProperty Not all property definitions can be used as from mapping targets. 
+3930 InvalidMappingTarget_TOProperty Not all property definitions can be used as to mapping targets. 
+3931 NonCompliantConstraintWithDefaultValue New constraint can't be added or new default value can't be updated if the default value is not compliant with it. 
+3932 UpdatedValueNotIncludedInList The updated property value must be one of the value list for property definition of list type. 
+3933 UpdatePropertiesFailed An error occurred when editing properties. 
+4000 InputConfigSectionCanNotBeNull Input config section can not be null. 
+4001 InvalidPropertySetGUID Invalid PropertySetId. 
+4002 UDPDefintionNameCanNotBeEmpty User defined property's name can not be empty. 
+4003 UserDefinedPropertyDefaultValueRequired User defined property's default value required. 
+4004 ValueExpressionNotParseable The expression cannot be parsed to the data of '{1}' type. 
+4100 NumberingSchemeNameIsEmpty XML error - numbering scheme name is empty 
+4101 NumberingSchemeNameIsNotUnique XML error - numbering scheme name is not unique 
+4102 NoDefaultNumberingScheme XML error - default numbering scheme is not found 
+4103 MoreThanOneDefaultNumberingScheme XML error - more than one default numbering scheme is found 
+4104 NumberingSchemeNamespaceIsEmpty XML error - numbering scheme namespace is empty 
+4105 InvalidNumberingSchemeFieldIndex XML error - numbering scheme field index is invalid 
+4106 AtLeastOneFieldIsRequiredInNumberingScheme XML error - numbering scheme must contain at least one field 
+4107 NumberingSchemeResourceCouldNotBeFoundByKey Numbering scheme resource couldn't be found 
+4108 NumberingSchemeDuplicatedResourceKey XML error - numbering scheme has duplicate resource key 
+4110 EntityClassDoesNotSupportReuse
+ The entity class does not support numbering reuse. 
+4111 NumberingFieldsDoNotAllowReuse The numbering fields selected do not allow numbering reuse. 
+4112 NumberingSchemeProviderCouldNotBeLoaded Numbering scheme provider could not be loaded. 
+4200 InvalidXmlNamespace Invalid XML namespace 
+4201 SchemeValidationError Validation error 
+4403 UnknownWorkgroup Workgroup is not known to the ADMS. 
+4408 WorkgroupIsPublisher The publishing workgroup cannot be the target of this operation. 
+4410 WorkgroupExists The SQL server is already an ADMS workgroup. 
+4411 NotFullSQL The SQL server edition does not support replication. 
+4412 ConfigurationError The workgroup replication configuration file is missing needed information. 
+4413 ReplicationEnabled This operation cannot be performed while workgroup replication is enabled. 
+4414 SubscribingWorkgroups Replication cannot be disabled because subscribing workgroups exist. 
+4415 SubscriberCleanupError Unable to clean up replication database on subscribing database server. 
+4416 ReplicationNotEnabled Workgroup replication is not enabled. 
+4417 SubscriptionNotActive The replicated database is not yet active. 
+4418 ServerConnectionFailureOrChangesPending Some subscriber workgroups are offline, or there are data changes that haven't yet been replicated between the publisher and the subscribers. 
+4419 DatabaseReplicationEnabled The database is currently replicated to other workgroups. 
+4420 WorkgroupIsSubscriber This operation could not be processed at any publisher sites. 
+4421 SubscriberSqlVersionMismatch Subscribing workgroups must have the same version of SQL Server as the publishing workgroup. 
+4424 DatabaseNotReplicated The database has not been replicated to the workgroup specified. 
+4425 DatabaseInvalidCharacters The database name contains one or more characters unsupported by replication. 
+4500 UnknowPropertyDefinition Unknown property definition 
+4501 UnknowContentSource Unknown content source 
+4600 InvalidSystemName Systems names set through the API must be a GUID, "D" format. 
+4601 DatabaseTakeOnlineFailed The database could not be brought online at the new location(s). 
+4602 InvalidSearchOperation The specified search operation is not supported for this data type. 
+4608 QuevedEventDoesntExist The selected job was previously deleted. 
+4609 AccountExists The account name is already associated with another user. 
+4610 ProfileAttributeDefExists A profile attribute definition with this name already exists. 
+5000 RequiredQueryParameterIsMissing The required query parameter is missing from the request. 
+5001 RequiredPathParameterIsMissing The required path parameter is missing from the request. 
+5002 InvalidRequestPath The request path is invalid. 
+5004 RequestedResourceNotFoundForTheGivenId Resource is not found for the given id. 
+5005 InvalidDataFormat The data format is incorrect. 
+8000 TicketInvalid You currently don't have permissions to download this file. Contact your admin for support. 
+8001 CannotSyncConfiguration There was a problem updating the configuration file. 
+8002 FileMissingFromStore The requested file was missing from the file store. 
+8003 DataManagerNotConfigured The file store server needs to be configured with a data management server. 
+8004 SiteSigninError Site authentication failed. 
+8005 WebServiceError There was a failure during the communication with the web services. 
+8006 UnregisteredExternalFileUploader The External File Uploader is not registered. 
+8007 ExternalFileUploaderNotInstalled The registered External File Uploader could not be located. 
+8008 UploadExternalFileFailed An error occurred while uploading the file. 
+8011 AutodeskUserNotFound Autodesk ID authentication failed. 
+10001 GenericError Generic Error 
+10002 PasswordError Given password does not meet minimum requirements. 
+10003 RateLimitError Too many requests have been received. 
+10004 DenyListError Some API/requests cannot be accessed. 
+10005 VaultServerUnavailable Vault Server unavailable. 
+10006 LocalAgentUnavailable Response from Local Agent was not received. 
+10007 RequestEntityTooLarge Selected file size has exceeded the allowable size limit. 
