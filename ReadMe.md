@@ -1,42 +1,32 @@
-﻿# Instructions for Updating
+﻿# Summary
+The Vault Exception Parser helps to parse Vault Errors and Restrictions from generic numbers to the actual message found in the Server Errors and Restrictions tables listed in the API documentation. To ensure the correct errors are returned you must use the VaultExceptionParser assembly that matches the year version of Vault Server returning the errors. This version of the VaultExceptionParser is intended for all flavors of Autodesk Vault 2023.
 
-<hr/>
-The Vault Error Parser must be updated for every new Vault version released to match its most current API and Error Codes.
+## Setup
+To make the library available for use in your application add the VaultExceptionParser2023.dll as a reference to your project.
+Make sure the VaultExceptionParser2023.dll is deployed with your library/application to aviod file not found exceptions when parsing an exception. 
 
-## Updating the API
+## Use
+The Vault Exception Parser contains all static methods and properties and is initialized upon first use, therefor you do not need to instantiate any objects on your own.
+Simply call the `ParseVaultException()` extension method from any Exception object.
 
-The two .dlls that are used in this library and will need to be replaced yearly are:
+```C#
+try{
+      /* Some code containing Vault API calls */
+}
+catch(Exception ex)
+{
+   /* 
+      If the exception is a valid Vault Exception then the full error or restriction message is returned with 
+      the original exception added as the InnerException, otherwise the original exception is returned. 
+   */
+   throw ex.ParseVaultException();
+}
+```
+    
+### Additional Versions
+-	VaultExceptionParser2020
+-	VaultExceptionParser2021
+-	VaultExceptionParser2022
+-	VaultExceptionParser2023
 
-- *Autodesk.Connectivity.WebServices.dll*
-- *Autodesk.Connectivity.WebServices.dll.WCF*
 
-You can find these files in one of two locations:
-
-- C:\Program Files\Autodesk\Vault Client \<YEAR\>\Explorer\
-- C:\Program Files\Autodesk\Autodesk Vault \<YEAR\> SDK\bin\x64
-
-### Vault Api Versions
--	Vault 2020 = 25
--	Vault 2021 = 26
--	Vault 2022 = 27
--	Vault 2023 = 28
-
-<hr/>
-## Updating Error Codes
-
-The error codes for Vault are hidden in the Vault SDK documentation:<br/>
-![Vault S D K Contents](Resources/VaultSDKContents.png)
-
-The Vault SDK must be installed before the document will be available.<br/>
-To install the SDK navigate to...<br/>
-C:\Program Files\Autodesk\Vault Client 2022\SDK\ and run **Setup.exe**.<br/>  
-
-Then the **VaultSDK.chm** will be at... <br/>
-C:\Program Files\Autodesk\Autodesk Vault 2022 SDK\docs\VaultSDK.chm
-
-Open the *VaultSDK.chm* file and select Server Error Codes.<br/>
-In the table starting in the top left cell "Code" select and hold the left mouse button down while using your mouse wheel to scroll all the way to the bottom right cell of the table.<br/>
-Once selected copy the contents into a file named **ErroCodes.txt** (naming is important).<br/>
-Save the file to the Resources folder of this project overwriting the previous file.<br/>
-Error Codes will now reflect the newest version.
-<hr/>
