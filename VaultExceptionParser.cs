@@ -12,7 +12,7 @@
     using System.Text.RegularExpressions;
 
     /// <summary>
-    /// The Vault Exception Manager helps to parse Vault Errors and Restrictions from generic numbers to the actual message found in the 
+    /// The Vault Exception Parser helps to parse Vault Errors and Restrictions from generic numbers to the actual message found in the 
     /// Server Errors and Restrictions tables listed in the API documentation.
     /// </summary>
     public static class VaultExceptionParser
@@ -163,7 +163,7 @@
         /// <param name="ex"></param>
         /// <param name="PareseError"></param>
         /// <returns></returns>
-        public static Exception ParseVaultException(Exception ex)
+        public static Exception ParseVaultException(this Exception ex)
         {
             try
             {
