@@ -32,4 +32,12 @@ catch(Exception ex)
 -	VaultExceptionParser2022
 -	[VaultExceptionParser2023](https://github.com/Futemire/VaultExceptionParser2023)
 
+<hr/>
 
+## Donations
+
+Everyone's time is valuable, including the time it took me to develop this library, so if you use and like this code please consider doanting.
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=KF5GUDY36NHJ8">
+      <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"/>
+</a>
