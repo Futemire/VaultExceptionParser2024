@@ -6,7 +6,7 @@ The Vault Exception Parser helps to parse Vault Errors and Restrictions from gen
 
 ## Setup
 To make the library available for use in your application add the VaultExceptionParser2023.dll as a reference to your project.
-Make sure the VaultExceptionParser2023.dll is deployed with your library/application to aviod file not found exceptions when parsing an exception. 
+Make sure the VaultExceptionParser2023.dll is deployed with your library/application to avoid file not found exceptions when parsing an exception. 
 
 ## Use
 The Vault Exception Parser contains all static methods and properties and is initialized upon first use, therefor you do not need to instantiate any objects on your own.

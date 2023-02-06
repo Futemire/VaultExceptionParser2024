@@ -199,12 +199,12 @@
                 }
 
                 /* Something didn't work so just return the original exception. */
-                return new Exception("Couldn't parse Vault exception...", ex);
+                return ex;
             }
             catch
             {
                 /* Not a Vault specific exception so just return the original exception. */
-                return new Exception("Not a Vault exception...", ex);
+                return ex;
             }
 
         }
