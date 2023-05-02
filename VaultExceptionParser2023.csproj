@@ -9,7 +9,7 @@
     <Copyright>2023</Copyright>
     <PackageTags>Autodesk;Vault;2023</PackageTags>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>Ketiv.VEP.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -39,9 +39,5 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="set DeployPath=&quot;C:\Users\ketiv_dmgab\source\repos\vJobs\vJobs.Extensibility\libs\&quot;&#xD;&#xA;echo F | XCOPY &quot;$(TargetPath)&quot; &quot;%25DeployPath%25&quot; /y" />
-  </Target>
 
 </Project>
