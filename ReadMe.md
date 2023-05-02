@@ -30,7 +30,7 @@ catch(Exception ex)
 -	VaultExceptionParser2020
 -	VaultExceptionParser2021
 -	VaultExceptionParser2022
--     VaultExceptionParser2023 (This Repo)
+-	VaultExceptionParser2023 (This Repo)
 -	[VaultExceptionParser2024](https://github.com/Futemire/VaultExceptionParser2024)
 
 <hr/>
