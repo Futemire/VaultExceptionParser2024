@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VaultExceptionParser2023.Properties {
+namespace VaultExceptionParser2024.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace VaultExceptionParser2023.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VaultExceptionParser2023.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VaultExceptionParser2024.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -62,7 +62,7 @@ namespace VaultExceptionParser2023.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to ############################
-        ///### Vault 2023 Error Codes
+        ///### Vault 2024 Error Codes
         ///############################
         ///### Code | Name | Comments 
         ///############################
@@ -73,15 +73,15 @@ namespace VaultExceptionParser2023.Properties {
         ///106 TransactionInvalidPrincipal The principal does not meet requirements to call this service.
         ///An example would be making a call without being [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string _2023ErrorCodes {
+        internal static string _2024ErrorCodes {
             get {
-                return ResourceManager.GetString("2023ErrorCodes", resourceCulture);
+                return ResourceManager.GetString("2024ErrorCodes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to #################################
-        ///### Vault 2023 Restriction Codes
+        ///### Vault 2024 Restriction Codes
         ///#################################
         ///### Code | Name | Comments 
         ///#################################
@@ -90,9 +90,9 @@ namespace VaultExceptionParser2023.Properties {
         ///1002	FileOldVersion	Operation cannot be performed because the file is an old version.
         ///1003	FileLinkedToItem	Operation cannot be performed because the file is link [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string _2023RestrictionCodes {
+        internal static string _2024RestrictionCodes {
             get {
-                return ResourceManager.GetString("2023RestrictionCodes", resourceCulture);
+                return ResourceManager.GetString("2024RestrictionCodes", resourceCulture);
             }
         }
     }

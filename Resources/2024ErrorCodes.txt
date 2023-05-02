@@ -1,5 +1,5 @@
 ############################
-### Vault 2023 Error Codes
+### Vault 2024 Error Codes
 ############################
 ### Code | Name | Comments 
 ############################
@@ -581,7 +581,7 @@ The server validates the BOM information against the defined schema, if validati
 2020 ObjectDataNotFound An attempt to get or delete the specified object data, or to get its version failed because no such object exists. 
 2021 AddCategory_ParentNotFound An attempt to add a child category failed because its parent does not exist. 
 2022 UpdateCategory_CategoryNotFound Category not found. 
-2023 AttachLibrary_GeneralFailure Unused 
+2024 AttachLibrary_GeneralFailure Unused 
 2024 AttachLibrary_CheckFileExistence Unused 
 2025 AttachLibrary_DataFileNotFound Unused 
 2026 AttachLibrary_InitializeRolesAndPermissions Unused 

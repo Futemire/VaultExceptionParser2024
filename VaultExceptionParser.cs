@@ -1,4 +1,4 @@
-﻿namespace VaultExceptionParser2023
+﻿namespace VaultExceptionParser2024
 {
     using Autodesk.Connectivity.WebServices;
 
@@ -62,7 +62,7 @@
             ResourceSet resources = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
             foreach (DictionaryEntry resource in resources)
             {
-                /* Grab first 4 chars from resource name to get the year. Ex: 2023ErrorCodes.txt*/
+                /* Grab first 4 chars from resource name to get the year. Ex: 2024ErrorCodes.txt*/
                 bool paresed = int.TryParse(resource.Key.ToString().Substring(0, 4), out int year);
                 if (!paresed) { continue; }
                 VaultYear = year;

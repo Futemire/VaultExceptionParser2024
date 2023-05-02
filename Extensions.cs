@@ -1,4 +1,4 @@
-﻿namespace VaultExceptionParser2023
+﻿namespace VaultExceptionParser2024
 {
     using System;
     using System.Collections.Generic;
@@ -54,6 +54,5 @@
         {
             return collection == null || collection.Count() == 0;
         }
-
     }
 }

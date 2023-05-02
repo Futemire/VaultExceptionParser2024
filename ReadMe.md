@@ -1,12 +1,12 @@
 ﻿# Summary
-The Vault Exception Parser helps to parse Vault Errors and Restrictions from generic numbers to the actual message found in the Server Errors and Restrictions tables listed in the API documentation. To ensure the correct errors are returned you must use the VaultExceptionParser assembly that matches the year version of Vault Server returning the errors. This version of the VaultExceptionParser is intended for all flavors of Autodesk Vault 2023.
+The Vault Exception Parser helps to parse Vault Errors and Restrictions from generic numbers to the actual message found in the Server Errors and Restrictions tables listed in the API documentation. To ensure the correct errors are returned you must use the VaultExceptionParser assembly that matches the year version of Vault Server returning the errors. This version of the VaultExceptionParser is intended for all flavors of Autodesk Vault 2024.
 
 ###### Codes Available in this library...
 ![GitHub Logo](Resources/VaultSDKContents.png)
 
 ## Setup
-To make the library available for use in your application add the VaultExceptionParser2023.dll as a reference to your project.
-Make sure the VaultExceptionParser2023.dll is deployed with your library/application to avoid file not found exceptions when parsing an exception. 
+To make the library available for use in your application add the VaultExceptionParser2024.dll as a reference to your project.
+Make sure the VaultExceptionParser2024.dll is deployed with your library/application to avoid file not found exceptions when parsing an exception. 
 
 ## Use
 The Vault Exception Parser contains all static methods and properties and is initialized upon first use, therefor you do not need to instantiate any objects on your own.
@@ -31,6 +31,7 @@ catch(Exception ex)
 -	VaultExceptionParser2021
 -	VaultExceptionParser2022
 -	[VaultExceptionParser2023](https://github.com/Futemire/VaultExceptionParser2023)
+-	VaultExceptionParser2024 (This Repo)
 
 <hr/>
 

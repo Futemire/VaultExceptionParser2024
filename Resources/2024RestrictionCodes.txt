@@ -1,9 +1,9 @@
 #################################
-### Vault 2023 Restriction Codes
+### Vault 2024 Restriction Codes
 #################################
 ### Code | Name | Comments 
 #################################
-1000 FileDependantParents	Operation cannot be performed because the file has dependent parents.
+1000	FileDependantParents	Operation cannot be performed because the file has dependent parents.
 1001	FileCheckedOut	Operation cannot be performed because the file is checked out.
 1002	FileOldVersion	Operation cannot be performed because the file is an old version.
 1003	FileLinkedToItem	Operation cannot be performed because the file is linked to an item.
@@ -12,7 +12,7 @@
 1007	FolderIsRoot	Operation cannot be performed because the folder is the root.
 1009	BadFolderId	Folder id is invalid.
 1010	MoveFolderExists	Folder with the same name already exists in the destination folder.
-1011	MoveFolderDescendentCheckedOut	Folder begin moved has descendant files that are checked out.
+1011	MoveFolderDescendentCheckedOut	Folder begin moved has descendent files that are checked out.
 1012	MoveFolderChildRootInvalid	Move folder rule-check failed: parent must exist, for all but root.
 1013	MoveFolderLibraryRelationshipInvalid	Move folder rule-check failed: libs can only have non lib parent if that parent is root. libs cannot have non lib children.
 1014	MoveFolderConcurrent	Cannot finish move to destination folder because the destination folder was already created due to a concurrent operation (add,move, or rename).
@@ -44,9 +44,9 @@
 2021	ItemChangeOrderLinkPreventsDeletion	Operation cannot be performed because the item belongs to a change order.
 2022	ItemPromoteOfPhantomOrReference	Can not promote phantom or reference files
 2024	ItemHasNoStateToRollbackTo	Operation cannot be performed because item has no state to rollback to.
-2025	ItemCantRollbackItemHistoryOnAClosedChangeOrder	Operation cannot be performed because you can not rollback a lifecycle change for a version that is associated with a closed or canceled change order.
+2025	ItemCantRollbackItemHistoryOnAClosedChangeOrder	Operation cannot be performed because you can not rollback a lifecycle change for a version that is associated with a closed or cancelled change order.
 2026	ItemMustBeOnAnActiveChangeOrder	Operation cannot be performed because the item must be associated with an active change order.
-2027	ItemEffectivityStartOfChildGreaterThanParent	Operation cannot be performed because the child item has a later effective start date/time than one of it's parents and there is no prior effective revision for the child that can be used.
+2027	ItemEffectivityStartOfChildGreaterThanParent	Operation cannot be performed because the child item has a later effectivity start date/time than one of it's parents and there is no prior effective revision for the child that can be used.
 2028	ItemCantRollbackItemBeforeCreationOfChangeOrder	Operation cannot be performed because you can not rollback a lifecycle change for a version that was created before the creation of the change order.
 2029	ItemIsObsolete	Operation cannot be performed when the destination object is obsolete.
 2030	ItemWasDeleted	Operation cannot be performed because the destination item has been deleted.
@@ -65,18 +65,18 @@
 2046	ItemRollbackTargetNotControlled	Operation cannot be performed because the target item is not Controlled (i.e. it can be purged).
 2047	RollbackItemLifeCycleStatesFailedWrongTarget	Operation cannot be performed because the target item is invalid.
 2048	FileMissingBOM	File should have BOM information but does not.
+3000	ChangeOrderLocked	Operation cannot be performed because item is locked by another user.
 #3000	DuplicateItemNumber	Operation cannot be performed because the entered item number already exists.
 3001	AutoFieldNumberUsedUp	Operation cannot be performed because the numbers in the auto-generated field are used up.
 3002	BadNumberingSchemeId	Operation cannot be performed because no numbering scheme has the requested id.
+3003	ChangeOrderActivityRequiresItemToBeInReview	Operation cannot be performed because the item is not in the 'In Review' life cycle state.
 #3003	NumberingSchemeNotActive	Operation cannot be performed because the requested numbering scheme is not active.
+3004	ChangeOrderNoUserPrivDeleteNotAllowed	 Operation cannot be performed because user does not have the required Delete Role for this Change Order. Note: this restriction will only be thrown by the server if the user has Uncondtional Delete permission otherwise a 303 exception will be thrown
 #3004	ItemManualLifeCycleStateChangeNotAllowed	Operation cannot be performed because manual life cycle state changes are not allowed.
 3005	ItemNumberNoMappedValue	Operation cannot be performed because no mapped item number exists for this item.
 3006	GenerateNumberFailed	Generate next number scheme value failed.
-3100	PropertyConstraintFailure	Transition out of WIP cannot be performed because of one or more property constraint violations.
-3000	ChangeOrderLocked	Operation cannot be performed because item is locked by another user.
-3003	ChangeOrderActivityRequiresItemToBeInReview	Operation cannot be performed because the item is not in the 'In Review' life cycle state.
-3004	ChangeOrderNoUserPrivDeleteNotAllowed	 Operation cannot be performed because user does not have the required Delete Role for this Change Order. Note: this restriction will only be thrown by the server if the user has Unconditional Delete permission otherwise a 303 exception will be thrown
 3007	ChangeOrderNumberAlreadyInUse	Operation cannot be performed because there already exists a Change Order with the specified Change Order Number.
+3100	PropertyConstraintFailure	Transition out of WIP cannot be performed because of one or more property constraint violations.
 4001	BadEntityId	Entity does not exist.
 4002	UnsupportedEntityClass	Operation not supported for that type of entity.
 5001	StateTransitionDenied	User does not have the permission to perform that state transition.
