@@ -8,6 +8,22 @@
 
     public static class Extensions
     {
+        /// <summary>
+        /// Adds the value to the dictionary only is the key does not already exist.<para/>
+        /// This method does NOT throw an Exception if the key already exists.
+        /// </summary>
+        /// <typeparam name="TKey">The Key Type.</typeparam>
+        /// <typeparam name="TValue">The Vaule Type</typeparam>
+        /// <param name="dict">The Dictionary to search/modify.</param>
+        /// <param name="key">The Key to look for.</param>
+        /// <param name="value">The Value to add.</param>
+        public static void AddDistinct<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value)
+        {
+            if (!dict.ContainsKey(key))
+            {
+                dict.Add(key, value);
+            }
+        }
 
         /// <summary>
         /// Ensures that the specified string ends with a period (.) by adding one if it does not exist.

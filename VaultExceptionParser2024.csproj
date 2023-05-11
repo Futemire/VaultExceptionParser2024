@@ -8,8 +8,8 @@
     <Version>20.24.0.0</Version>
     <Copyright>Fütemire 2024</Copyright>
     <PackageTags>Autodesk;Vault;2024</PackageTags>
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Ketiv.VEP.pfx</AssemblyOriginatorKeyFile>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -17,7 +17,12 @@
     <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Futemire/VaultExceptionParser2024</RepositoryUrl>
+    <ApplicationIcon>VaultErrorParser.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="VaultErrorParser.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Autodesk.Connectivity.WebServices">
@@ -54,5 +59,9 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set DeployPath=&quot;C:\Users\ketiv_dmgab\source\repos\vJobs\vJobs.Extensibility\libs\&quot;&#xD;&#xA;echo F | XCOPY &quot;$(TargetPath)&quot; &quot;%25DeployPath%25&quot; /y" />
+  </Target>
 
 </Project>

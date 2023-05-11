@@ -115,11 +115,11 @@
 
                             if (resourceName.Contains("RestrictionCodes"))
                             {
-                                VaultRestrictionCodes.Add(int.Parse(code), eCode);
+                                VaultRestrictionCodes.AddDistinct(int.Parse(code), eCode);
                             }
                             else
                             {
-                                VaultErrorCodes.Add(int.Parse(code), eCode);
+                                VaultErrorCodes.AddDistinct(int.Parse(code), eCode);
                             }
                         }
                         prevCodeLine = currCodeLine.Trim();
@@ -147,11 +147,11 @@
 
                 if (resourceName.Contains("RestrictionCodes"))
                 {
-                    VaultRestrictionCodes.Add(int.Parse(code), eCode);
+                    VaultRestrictionCodes.AddDistinct(int.Parse(code), eCode);
                 }
                 else
                 {
-                    VaultErrorCodes.Add(int.Parse(code), eCode);
+                    VaultErrorCodes.AddDistinct(int.Parse(code), eCode);
                 }
             }
         }
